@@ -4,8 +4,43 @@
 
 .photograph-header {
     background-color: #FAFAFA;
-    height: 300px;
+    height: 313px;
+    width: 1240px; /* Dimension suivant maquettes */
     margin: 0 100px;
+}
+
+/* Style de article dans la div photograph-header */
+
+.photograph-header section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Mimi Keel */
+.photograph-header section h2 {
+    color: #D3573C;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 83px;
+    text-align: center;
+    margin-top: .5rem;
+    margin-bottom: 0;
+}
+
+.photograph-header section p {
+    padding-left: 50px;
+}
+
+.photograph-header section img {
+    height: 200px;
+    width: 200px;
+    /* Mes Ajouts de style */
+    border-radius: 50%;
+    margin-right: 150px;
 }
 
 .contact_button {
@@ -14,13 +49,13 @@
     color: white;
     padding: 11px;
     width: 170px;
-    height: 70px;
+    height: 69px;
     border: none;
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
 }
-
+/* MODAL */
 .modal {
     border-radius: 5px;
     background-color: #DB8876;
@@ -73,4 +108,237 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+}
+
+/* DROPDOWN MENU STYLING*/
+
+.filter {
+    display: flex;
+    padding-left: 100px;
+    position: relative;
+}
+
+/* .filter * {
+    box-sizing: border-box;
+} */
+
+.trier-par {
+    padding-right: 25px; 
+}
+
+.select {
+    width: 139px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    border-radius: 5px;
+    color :#fff;
+    cursor: pointer;
+    background-color: #911C1C;
+    transition: background-color 0.2s;
+}
+
+.select:hover {
+    background-color: #9d2f2f;
+}
+
+/* Le STYLE DU CLICK SERA IMPLEMENTE DANS LE FICHIER downdropMenu.js */
+
+/* .select-clicked {
+    border: 4px solid blue;
+} */
+
+.arrow {
+    padding-left: 26px;
+    transition:  0.3s;
+}
+
+/* ROTATION IMPLEMENTE DANS LE downdropMenu.js */
+.arrow-rotate {
+transform: rotate(180deg);
+}
+
+.filter-options-container {
+    width: 170px;
+    height: 170px;
+    border-radius: 5px;
+    background-color: #901C1C;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    opacity: 0;
+    display: none;
+    transition: 0.2s;
+    z-index: 1;
+}
+
+.filter-option {
+    padding: 1em;
+    border-bottom: 1px solid #fff;
+    border-radius: 5px;
+}
+
+.filter-options-container > a {
+    color: #fff;
+    padding: 1em;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.filter-options-container>a:hover {
+    background-color: #901C1C;
+}
+
+/* ACTIVE STYLE DANS LE dropdownMenu.js */
+.active {
+    background-color: #901C1C;
+}
+/* OPEN STYLE DANS LE JS */
+.filter-options-container-open {
+    display: flex;
+    opacity: 1;
+    position: absolute;
+}
+
+/* DIVISION CONTENANT LES PHOTOS */
+
+.globalPhotos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 58px;
+    padding-left: 32px;
+}
+
+.globalPhotos article {
+    width: 30%;
+    border-radius: 5px;
+}
+
+.globalPhotos article img {
+    border-radius: 5px;
+}
+
+.h3-photo {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 31px;
+    color: #911C1C;
+    margin-top: 10px;
+}
+
+video {
+    object-fit: cover;
+}
+
+.isItYou {
+    width: fit-content;
+}
+
+/* PARAGRAPH NBRE LIKES */
+.paragraph-icon {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 31px;
+    text-align: right;
+
+    color: #911C1C;
+}
+
+.heart-link {
+    background-color: #fff;
+    border: none;
+}
+
+.fa-heart {
+    color: #911C1C;
+    font-size: 20px;
+}
+
+
+/* DIV DU BAS DE PAGE POUR NOMBRE TOTAL DE LIKES */
+.bottomHeart {
+    width: 376px;
+    height: 89px;
+    background-color: #DB8876;
+    border-radius: 5px;
+    color: #000;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 36px;
+    transform: translateY(21px);
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.count-likes {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 31px;
+}
+
+.tarif-jour {
+    padding-right: 31px;
+}
+
+/* *********** LIGHT BOX *********** */
+.lightbox {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: #80808080;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    display: none;
+}
+
+.lightbox.show {
+    display: block;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #80808080;
+}
+
+.previous, .next, .closeLightbox {
+    height: 50px;
+    width: 50px;
+}
+
+.carrouselImage {
+    display: block;
+}
+
+.divRightButton {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.divCloseButton, .divInterneRightButton {
+    width: 50%;
 }

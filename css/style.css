@@ -3,8 +3,9 @@
 body {
     font-family: "DM Sans", sans-serif;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
 
 header {
     display: flex;
@@ -18,10 +19,18 @@ h1 {
     color: #901C1C;
     margin-right: 100px;
 }
+/* Ajout focus sur titre Photographes n°2 */ 
+.h1:focus {
+    outline: 4px solid rgb(7, 153, 9);
+}
 
 .logo {
     height: 50px;
     margin-left: 100px;
+}
+/* Ajout focus sur logo n°1 */
+.logo:focus-visible {
+    outline: 4px solid rgb(7, 153, 9);
 }
 
 .photographer_section {
@@ -39,12 +48,63 @@ h1 {
     flex-direction: column;
 }
 
+/* ALIGNEMENT PHOTO DANS LA DIV LES CONTENANT */
+.divPhotoH2 {
+    text-align: center;
+}
+
 .photographer_section article h2 {
     color: #D3573C;
     font-size: 36px;
+    /* Mes Ajouts de style */
+    font-weight: 400;
+    line-height: 47px;
+    text-align: center;
+    margin-top: .5rem;
+    margin-bottom: 0;
 }
 
 .photographer_section article img {
     height: 200px;
     width: 200px;
+    /* Mes Ajouts de style */
+    border-radius: 50%;
 }
+
+/* Hover & Focus sur les images des photographes */
+.photographer_section article img:hover, .photographer_section article img:focus {
+    transform: scale(1.1);
+}
+
+/* Mes 3 paragrahes sous photo */
+.photographer_section article p {
+    font-weight: 400;
+    text-align: center;
+}
+
+.paragraphOne {
+    font-size: 24px;
+    line-height: 31px;
+    color: #901C1C;
+    margin-top: 0;
+    margin-bottom: 19px;
+} 
+
+.paragraphTwo {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: #525252;
+    margin: 3px 0;
+}
+
+.paragraphThree {
+    font-size: 11px;
+    line-height: 12px;
+    color: #757575;
+    margin: 0;
+}
+
+
