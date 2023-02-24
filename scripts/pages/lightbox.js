@@ -43,7 +43,7 @@ function lightbox(data) {
     if(image !== undefined) {
             const imageCenter = document.createElement('img')
             imageCenter.classList.add('photoOuVideo')
-            imageCenter.setAttribute('src', images)
+        //     imageCenter.setAttribute('src', images)
             imageCenter.style.width = '80vw'
             imageCenter.style.height = '80vh'
             imageCenter.setAttribute('alt', 'why-not')
@@ -59,7 +59,7 @@ function lightbox(data) {
     } else {
             const videoPhoto = document.createElement('video')
             videoPhoto.classList.add('photoOuVideo')
-            videoPhoto.setAttribute('src', videoSource)
+        //     videoPhoto.setAttribute('src', videoSource)
             videoPhoto.setAttribute('type', 'video/mp4')
             videoPhoto.style.width = '80vw'
             videoPhoto.style.height = '80vh'

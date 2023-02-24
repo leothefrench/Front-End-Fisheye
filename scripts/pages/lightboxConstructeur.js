@@ -53,7 +53,7 @@ class Lightbox {
     }
 
     display() {
-        document.querySelector('.photoOuVideo').src = this._currentElement.image; // UN BUG ICI MAIS QUOI ???
+        console.log(document.querySelector('.photoOuVideo').src = this._currentElement.image); // UN BUG ICI MAIS QUOI ???
         document.querySelector('.lightbox').classList.add('show')
     }
 

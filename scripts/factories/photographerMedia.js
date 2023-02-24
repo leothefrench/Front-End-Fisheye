@@ -123,7 +123,7 @@ function factoryMedia(data) {
         // CREATION ICON BUTTON
         const iconButton = document.createElement('button')
         iconButton.classList.add('heart-link')  
-        iconButton.setAttribute('data-set', id)
+        iconButton.setAttribute('data-set', id) // AJOUT ID SUR BOUTON
 
 
         
@@ -153,40 +153,30 @@ function factoryMedia(data) {
         // divLightBox.appendChild(lightbox)
         article.appendChild(lightbox)
 
-        // CREATION DE LA FONCTION POUR LE COMPTAGE DES LIKES
-        let heartLink = document.querySelectorAll('.heart-link') // CIBLAGE COUNTER PARAGRAPHE LIKES
-        let countLikes = document.querySelectorAll('.paragraph-icon')
+        // // CREATION DE LA FONCTION POUR LE COMPTAGE DES LIKES
+        // const buttons = document.querySelectorAll('button') // CIBLAGE COUNTER PARAGRAPHE LIKES
+        // let countLikes = document.querySelectorAll('.paragraph-icon')
 
-        console.log(countLikes)
-        console.log(heartLink)
+        // console.log(buttons)
+        // // console.log(heartLink)
 
-        heartLink.forEach((el) => { 
-            el.addEventListener('click', (e) => {
-            
-                console.log(e.closest('span'));
-                
-                            
-        })
-    })
-
-        
-        // counter.forEach((el ) => {
-        //     el.addEventListener('click', (e) => {
-        //         // e.preventDefault()
-
-        //         e.currentTarget.id
-        //         countLikes += 1;
-        //         counter.innerHTML = countLikes;
-        //         console.log(countLikes)
-        //     })
+        // buttons.forEach((button) => { 
+        //     button.addEventListener('click', handleButtonClick)                         
         // })
+
+        // function handleButtonClick(event) {
+        //     event.stopPropagation()
+        //     console.log('POUF POUF')
+        //     console.log(event.currentTarget)
+        //     // buttons.textContent = countLikes++;
+        //     // console.log(event.currentTarget); 
+        // }
+
 
         return (article)
     }
     return { id, photographerId, title, image, likes, date, price, getUserCardDOM }
 }
-
-
 
 // CREATION DIV NBRE DE LIKES & ICON COEUR
 const divBottom = document.querySelector('.bottomHeart')

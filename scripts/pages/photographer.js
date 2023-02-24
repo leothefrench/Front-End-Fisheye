@@ -52,6 +52,7 @@ async function init() {
     // console.log(photographer)       // AFFICHE LES 2 OBJETS OBTENU PAR LA FONCTION GETPHOTOGRAPHER
 
         dropDownMenu(photographer)
+        comptageLike(photographer)
         lightbox(photographer)
 
 
