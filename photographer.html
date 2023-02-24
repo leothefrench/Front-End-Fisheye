@@ -30,12 +30,25 @@
           <h2>Contactez-moi</h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
+				<form>         
+						<label for="prenom">Prénom</label>
+						<input type="text" id="prenom" class='firstName-input' aria-label="Entrez votre prenom" aria-required="true"/>
+            <span class="message-error">Entrer votre prénom</span>
+
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" class='lastName-input' aria-label="Entrez votre nom" aria-required="true">
+            <span class="message-error">Entrer votre nom</span>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" class='email-input' aria-label="Entrez votre email" aria-required="true">
+            <span class="message-alert">Entrer un Email valide</span>
+
+            <label for="message">Votre message</label>
+            <textarea name="message" id="message" cols="90" rows="10" class='msg-input' role="textbox" 
+            aria-multiline="true" aria-required="true"></textarea>
+            <span class="message-alert">Entrer un message</span>
+          
+            <button class="contact_button">Envoyer</button>
 				</form>
 			</div>
 		</div>
