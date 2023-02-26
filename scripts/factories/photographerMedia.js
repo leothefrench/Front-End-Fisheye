@@ -118,6 +118,7 @@ function factoryMedia(data) {
         // PARAGRAPHE NBRE LIKES
         const paragraphIcon = document.createElement('p')       // MY COUNTER OF LIKES
         paragraphIcon.classList.add('paragraph-icon')
+        paragraphIcon.setAttribute('data-set', id)
         paragraphIcon.textContent = `${likes}`;
 
         // CREATION ICON BUTTON
@@ -153,24 +154,25 @@ function factoryMedia(data) {
         // divLightBox.appendChild(lightbox)
         article.appendChild(lightbox)
 
-        // // CREATION DE LA FONCTION POUR LE COMPTAGE DES LIKES
-        // const buttons = document.querySelectorAll('button') // CIBLAGE COUNTER PARAGRAPHE LIKES
-        // let countLikes = document.querySelectorAll('.paragraph-icon')
+    //    // CREATION DE LA FONCTION POUR LE COMPTAGE DES LIKES
+    //     const buttons = document.querySelectorAll('.heart-link') // CIBLAGE DES PARAGRAPHES CONTENANT LE NOMBRE (SERA NOTRE COUNTER)
+    //     let countLikes = document.querySelector('.paragraph-icon') // CIBLAGE DU PARAGRAPHE QUI CONTIENT MON COMPTEUR
+    //     let counter = 0
 
-        // console.log(buttons)
-        // // console.log(heartLink)
+    //     console.log(buttons)
+    //     // console.log(heartLink)
 
-        // buttons.forEach((button) => { 
-        //     button.addEventListener('click', handleButtonClick)                         
-        // })
+    //     buttons.forEach((button) => { 
+    //         button.addEventListener('click', handleButtonClick)                         
+    //     })
 
-        // function handleButtonClick(event) {
-        //     event.stopPropagation()
-        //     console.log('POUF POUF')
-        //     console.log(event.currentTarget)
-        //     // buttons.textContent = countLikes++;
-        //     // console.log(event.currentTarget); 
-        // }
+    //     function handleButtonClick(event) {
+    //         console.log(event.currentTarget) // OK RETOURNE BIEN LE BOUTON QUI PREND LE CLICK
+
+    //         countLikes = counter++;
+    //         console.log(countLikes)
+    //         countLikes.innerHTML = `${counter}`;
+    //     }
 
 
         return (article)
