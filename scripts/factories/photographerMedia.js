@@ -154,31 +154,13 @@ function factoryMedia(data) {
         // divLightBox.appendChild(lightbox)
         article.appendChild(lightbox)
 
-    //    // CREATION DE LA FONCTION POUR LE COMPTAGE DES LIKES
-    //     const buttons = document.querySelectorAll('.heart-link') // CIBLAGE DES PARAGRAPHES CONTENANT LE NOMBRE (SERA NOTRE COUNTER)
-    //     let countLikes = document.querySelector('.paragraph-icon') // CIBLAGE DU PARAGRAPHE QUI CONTIENT MON COMPTEUR
-    //     let counter = 0
-
-    //     console.log(buttons)
-    //     // console.log(heartLink)
-
-    //     buttons.forEach((button) => { 
-    //         button.addEventListener('click', handleButtonClick)                         
-    //     })
-
-    //     function handleButtonClick(event) {
-    //         console.log(event.currentTarget) // OK RETOURNE BIEN LE BOUTON QUI PREND LE CLICK
-
-    //         countLikes = counter++;
-    //         console.log(countLikes)
-    //         countLikes.innerHTML = `${counter}`;
-    //     }
-
-
         return (article)
     }
     return { id, photographerId, title, image, likes, date, price, getUserCardDOM }
 }
+
+
+
 
 // CREATION DIV NBRE DE LIKES & ICON COEUR
 const divBottom = document.querySelector('.bottomHeart')
@@ -189,7 +171,7 @@ divNumberLikes.classList.add('count-likes')
 // PARAGRAPHE NUMBER LIKES & ICON IN SPAN
 const numberLikes = document.createElement('p')
 numberLikes.classList.add('counter')
-numberLikes.textContent = ' 280 000'
+numberLikes.textContent = '0'
 
 const iconLikes = document.createElement('span')
 iconLikes.innerHTML = '<i class="fa-solid fa-heart"></i>'
