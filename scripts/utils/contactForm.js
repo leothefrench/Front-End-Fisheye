@@ -2,8 +2,8 @@ function displayModal() {
     const modal = document.getElementById("contact_modal");
     modal.classList.add('opened')   
     
-    const closeBtn = document.querySelector('')
-    closeBtn.focus()
+    // const closeBtn = document.querySelector('')
+    // closeBtn.focus()
 
     const main = document.getElementById('main')
 
@@ -15,9 +15,9 @@ function closeModal() {
     const modal = document.getElementById("contact_modal");
     const main = document.getElementById('main')
 
-    modal.classList.remove('opened')
-    main.setAttribute('aria-hidden', false)
-    modal.setAttribute('aria-hidden', true)
+    // modal.classList.remove('opened')
+    // main.setAttribute('aria-hidden', false)
+    // modal.setAttribute('aria-hidden', true)
 
     modal.style.display = "none";
 }
@@ -40,7 +40,7 @@ let verificationDeFirst
 
 /* CHECKING OF FIRSTNAME INPUT */
 inputFirstName.addEventListener('input', (e) => {
-    if(e.target.value.length == 0) {
+    if(e.target.value.length <= 2) {
         errorMessage[0].style.display = 'inline'
         inputFirstName.classList.add('echec')
         inputFirstName.classList.add('border')
@@ -53,7 +53,7 @@ inputFirstName.addEventListener('input', (e) => {
 })
 /* CHECKING OF LASTNAME INPUT */
 inputLastName.addEventListener('input', (e) => {
-    if(e.target.value.length == 0) {
+    if(e.target.value.length <= 2) {
         errorMessage[1].style.display = 'inline'
         inputFirstName.classList.add('echec')
         inputFirstName.classList.add('border')
@@ -100,6 +100,11 @@ document.querySelector('.contact_button').addEventListener((e) => {
     /* SI TOUTES LES VERIFICATION A TRUE ON FAIT CE QUI SUIT */
     if(verificationDeFirst === true && verificationDeLast === true && verificationEmail === true && verificationMsg === true) {
 
+
+
+
+        // lOG INFOS ENTREES PAR UTILISATEUR
+        
     }
 })
 }

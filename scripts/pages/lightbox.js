@@ -5,6 +5,8 @@ function lightbox(data) {
     const images = `assets/photographers/${image}`;
     const videoSource = `assets/photographers/${video}`;
 
+    console.log(videoSource) // LE UNDEFINED EST ICI
+
     // CREATION DU MODELE DE LA GALERIE DES DIAPOSITIVES APRES LE CLIC SUR UNE DES IMAGES OU PHOTOS
 
     // CREATION DE MA DIV GLOBALE QUI VA CONTENIR MES 3 DIV
@@ -43,7 +45,7 @@ function lightbox(data) {
     if(image !== undefined) {
             const imageCenter = document.createElement('img')
             imageCenter.classList.add('photoOuVideo')
-        //     imageCenter.setAttribute('src', images)
+            imageCenter.setAttribute('src', images)
             imageCenter.style.width = '80vw'
             imageCenter.style.height = '80vh'
             imageCenter.setAttribute('alt', 'why-not')
@@ -51,7 +53,7 @@ function lightbox(data) {
             const titleImage = document.createElement('h3')
             titleImage.classList.add('titleImage')
             titleImage.textContent= `${title}`
-
+            // imageCenter.setAttribute('src', videoSource)
             linkImgCarrousel.appendChild(imageCenter)
             linkImgCarrousel.appendChild(titleImage)
             carrouselImage.appendChild(linkImgCarrousel) // AJOUT DU LIEN LINKIMGCARROUSEL A LA DIV CARROUSEL IMAGE
@@ -59,7 +61,7 @@ function lightbox(data) {
     } else {
             const videoPhoto = document.createElement('video')
             videoPhoto.classList.add('photoOuVideo')
-        //     videoPhoto.setAttribute('src', videoSource)
+            videoPhoto.setAttribute('src', videoSource)
             videoPhoto.setAttribute('type', 'video/mp4')
             videoPhoto.style.width = '80vw'
             videoPhoto.style.height = '80vh'

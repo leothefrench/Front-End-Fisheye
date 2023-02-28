@@ -3,24 +3,6 @@
        // CREATION DE LA FONCTION POUR LE COMPTAGE DES LIKES
         const buttons = document.querySelectorAll('.heart-link') // CIBLAGE DES PARAGRAPHES CONTENANT LE NOMBRE (SERA NOTRE COUNTER)
 
-        // TRANSFORMATION DE LA NODELIST buttons EN ARRAY AVEC ARRAY.From & STOCKAGE DANS UNE NOUVELEL VARIABLE
-        // const arrayButtons = Array.from(buttons)
-        // console.log(arrayButtons)
-        
-
-        // function sumArrayOfNumbers(numbersArray) {
-
-        //     for(let n of numbersArray) {
-        //         console.log(n)
-        //         let totalLikes = 0;
-        //         totalLikes += n;
-        //     }
-        //     return totalLikes;
-        // }   
-        // sumArrayOfNumbers(arrayButtons)
-        // console.log(totalLikes) // BUG BUG NOT DEFINE
-        
-        
         buttons.forEach((button) => { 
             button.addEventListener('click', handleButtonClick)                         
         });
@@ -50,6 +32,21 @@
             counter.textContent = `${count}`;
             globalCounter.textContent = `${countGlobal}`
         }
+
+
+        // RECUPERATION DES PARGAGRAPHES CONTENANT LES NOMBRES DE LIKES
+        const counterParagraphOfLikes = document.querySelectorAll('.paragraph-icon')
+        console.log(counterParagraphOfLikes)
+
+        counterParagraphOfLikes.forEach((paragraphe) => {
+            let numberValue = parseInt(paragraphe.innerText, 10)
+            console.log(numberValue) // VALEUR lES UNES APRES LES AUTRES
+        })
+
+
+        // AJOUT AU COMPTEUR DES LIKES EN BAS DE PAGE
+        let countBottom = document.querySelector('.counter')
+        // countBottom.innerText = ''
     }
        
   
