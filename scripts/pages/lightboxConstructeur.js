@@ -8,6 +8,7 @@ class Lightbox {
     //POUR AFFICHER LA MODALE LORS DU CLIC UTILISATEUR
     show(id) {
         this._currentElement = this.getElementById(id);
+        console.log(this._currentElement)
         this.display();
         console.log(id);
     }

@@ -1,4 +1,4 @@
-       function comptageLike(data) {
+       function comptageLike() {
 
        // CREATION DE LA FONCTION POUR LE COMPTAGE DES LIKES
         const buttons = document.querySelectorAll('.heart-link') // CIBLAGE DES PARAGRAPHES CONTENANT LE NOMBRE (SERA NOTRE COUNTER)
@@ -33,20 +33,23 @@
             globalCounter.textContent = `${countGlobal}`
         }
 
-
         // RECUPERATION DES PARGAGRAPHES CONTENANT LES NOMBRES DE LIKES
         const counterParagraphOfLikes = document.querySelectorAll('.paragraph-icon')
         console.log(counterParagraphOfLikes)
 
+        let total = 0;
+
         counterParagraphOfLikes.forEach((paragraphe) => {
             let numberValue = parseInt(paragraphe.innerText, 10)
-            console.log(numberValue) // VALEUR lES UNES APRES LES AUTRES
-        })
+
+            total += numberValue;
+            console.log(numberValue)
+         })
 
 
         // AJOUT AU COMPTEUR DES LIKES EN BAS DE PAGE
         let countBottom = document.querySelector('.counter')
-        // countBottom.innerText = ''
+        countBottom.innerText = `${total}`
     }
        
   
