@@ -124,6 +124,7 @@ function factoryMedia(data) {
         // CREATION ICON BUTTON
         const iconButton = document.createElement('button')
         iconButton.classList.add('heart-link')  
+        iconButton.setAttribute('data-isliked', false)  
         iconButton.setAttribute('data-set', id) // AJOUT ID SUR BOUTON
 
 

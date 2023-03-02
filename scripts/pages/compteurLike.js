@@ -10,46 +10,50 @@
         function handleButtonClick(event) {
 
             const button = event.currentTarget;
-            let isLiked = button.getAttribute('data-isLiked');
+            let isLiked = button.getAttribute('data-isliked');
+
+            console.log(button)
             
             const counter = button.parentElement.children[0]
             let count = parseInt(counter.textContent)
 
             const globalCounter = document.querySelector('.counter')
             let countGlobal = parseInt(globalCounter.textContent)
-            // countGlobal.textContent = sumArrayOfNumbers()
+            // countGlobal.textContent = sumArrayOfNumbers() // CODAGE DE CETTE FUNCTION POUR AVOIR LE TOTAL DES LIKES DU DEPART
 
-            if(isLiked === true ){
+
+            // console.log(isLiked)
+            // console.log(typeof (isLiked))
+
+            if(isLiked == "true"){
+                // alert('POUF')
                 count--;
                 countGlobal--;
-                button.setAttribute('data-isLiked', false)
+                button.setAttribute('data-isliked', false)
+            
             } else {
                 count++;
                 countGlobal++;
-                button.setAttribute('data-isLiked', true)
+                button.setAttribute('data-isliked', true)
             }
 
             counter.textContent = `${count}`;
             globalCounter.textContent = `${countGlobal}`
+
+            // console.log(globalCounter)
         }
 
-        // RECUPERATION DES PARGAGRAPHES CONTENANT LES NOMBRES DE LIKES
-        const counterParagraphOfLikes = document.querySelectorAll('.paragraph-icon')
-        console.log(counterParagraphOfLikes)
+        // RECUPERATION DES PARAGRAPHES CONTENANT LES NOMBRES DE LIKES
+        const counterParagraphOfLikes = document.querySelectorAll('.paragraph-icon') /*  ATTENTION UN SEUL CLIC ADMISSIBLE PAR ICON */
 
         let total = 0;
-
         counterParagraphOfLikes.forEach((paragraphe) => {
             let numberValue = parseInt(paragraphe.innerText, 10)
-
             total += numberValue;
-            console.log(numberValue)
          })
-
-
         // AJOUT AU COMPTEUR DES LIKES EN BAS DE PAGE
         let countBottom = document.querySelector('.counter')
         countBottom.innerText = `${total}`
     }
        
-  
+

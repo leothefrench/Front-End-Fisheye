@@ -139,6 +139,8 @@ const selected = document.querySelector('.selected')
                 globalPhotos.appendChild(userCardDOM);
             });
 
+            comptageLike() // REHYDRATATION DES ADD EVENT LISTENER
+
             break
           case 'popularite':
 
@@ -152,6 +154,8 @@ const selected = document.querySelector('.selected')
                 // console.log(userCardDOM)        // CHECK DES MEDIAS
                 globalPhotos.appendChild(userCardDOM);
             });
+
+           comptageLike() // REHYDRATATION DES ADD EVENT LISTENER
          
             break
           case 'titre':
@@ -166,6 +170,9 @@ const selected = document.querySelector('.selected')
                 // console.log(userCardDOM)        // CHECK DES MEDIAS
                 globalPhotos.appendChild(userCardDOM);
             });
+
+           comptageLike() // REHYDRATATION DES ADD EVENT LISTENER
+
             break
             
           default:

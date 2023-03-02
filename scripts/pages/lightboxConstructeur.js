@@ -5,7 +5,7 @@ class Lightbox {
         this.manageEvent()
     }
 
-    //POUR AFFICHER LA MODALE LORS DU CLIC UTILISATEUR
+    //POUR AFFICHER LA MODALE LORS DU CLIC UTILISATEUR 
     show(id) {
         this._currentElement = this.getElementById(id);
         console.log(this._currentElement)
@@ -49,12 +49,17 @@ class Lightbox {
         })
     }
     // POUR OBTENIR L'ID DE
+   
     getElementById(id) {
+         console.log(this._listElement.id)
         return this._listElement.find(element => element.id == id)
     }
 
+    
     display() {
-        console.log(document.querySelector('.photoOuVideo').src = this._currentElement.image); // UN BUG ICI MAIS QUOI ???
+        console.log(this._currentElement.image)
+        document.querySelector('.photoOuVideo').src = `assets/photographers/${image}this._currentElement.image`;
+
         document.querySelector('.lightbox').classList.add('show')
     }
 

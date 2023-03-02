@@ -1,11 +1,16 @@
+
 function lightbox(data) {
     console.log(data)
+   
+
     const { id, photographerId, title, image, video, likes, date, price } = data;
 
     const images = `assets/photographers/${image}`;
-    const videoSource = `assets/photographers/${video}`;
 
-    console.log(videoSource) // LE UNDEFINED EST ICI
+
+    const videoSource = `assets/photographers/${video}`;
+console.log(images)
+    console.log(videoSource) // LE UNDEFINED EST ICI MAIS POURQUOI DONC ?
 
     // CREATION DU MODELE DE LA GALERIE DES DIAPOSITIVES APRES LE CLIC SUR UNE DES IMAGES OU PHOTOS
 
@@ -40,6 +45,7 @@ function lightbox(data) {
         const linkImgCarrou = '#'
         linkImgCarrousel.setAttribute('href', linkImgCarrou)   
 
+        console.log(image)
 
       //CREATION DE L'IMAGE OU DE LA VIDEO QUI SERA CLIQUABLE POUR LANCER LA LIGHTBOX
     if(image !== undefined) {
@@ -116,8 +122,8 @@ function lightbox(data) {
 
     document.querySelectorAll('.div-lien').forEach((el) => { 
         el.addEventListener('click', (e) => {
-            myBox.show(e.currentTarget.dataset.id);         // SI VIDEO LANCER LA VIDEO
-                            
+            console.log(e.currentTarget.dataset.id)
+            myBox.show(e.currentTarget.dataset.id);                            
         })
     })
     return divContent;
@@ -125,5 +131,5 @@ function lightbox(data) {
 
 
 
-
+ 
 

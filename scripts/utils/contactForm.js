@@ -1,12 +1,9 @@
 function displayModal() {
     const modal = document.getElementById("contact_modal");
     modal.classList.add('opened')   
-    
     // const closeBtn = document.querySelector('')
     // closeBtn.focus()
-
     const main = document.getElementById('main')
-
     main.setAttribute('aria-hidden', true)
 	modal.style.display = "block";
 }
@@ -15,7 +12,7 @@ function closeModal() {
     const modal = document.getElementById("contact_modal");
     const main = document.getElementById('main')
 
-    // modal.classList.remove('opened')
+    modal.classList.remove('opened')
     // main.setAttribute('aria-hidden', false)
     // modal.setAttribute('aria-hidden', true)
 
@@ -72,7 +69,7 @@ inputEmail.addEventListener('input', (e) => {
 
         verificationEmail = true
     } else {
-        errorMessage[2].style.display ='none'
+        errorMessage[2].style.display ='inline'
         inputEmail.classList.add('echec')
         inputEmail.classList.add('border')
 
@@ -100,11 +97,11 @@ document.querySelector('.contact_button').addEventListener((e) => {
     /* SI TOUTES LES VERIFICATION A TRUE ON FAIT CE QUI SUIT */
     if(verificationDeFirst === true && verificationDeLast === true && verificationEmail === true && verificationMsg === true) {
 
+        alert(('Votre réservationé été reçue.'))    // CONFIRMATION APRES SOUMISSION DU FORMULAIRE
+    } else {
 
-
-
-        // lOG INFOS ENTREES PAR UTILISATEUR
-        
-    }
+    alert("Merci de bien remplir votre inscription"); // Alert box pour informer l'utilisateur à remplir correctement le formulaire
+    e.preventDefault()  // Stop le comportement par défaut de l'envoi du formulaire
+    }       // lOG INFOS ENTREES PAR UTILISATEUR FAIRE AU LIEU D'UEN ALERTE
 })
 }
