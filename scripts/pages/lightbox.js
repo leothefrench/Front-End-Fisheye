@@ -1,16 +1,14 @@
 
 function lightbox(data) {
-    console.log(data)
-   
+    console.log(data) // RETOURNE BIEN LES DATAS DU PHOTOGRAPHE ET SES MEDIAS
 
     const { id, photographerId, title, image, video, likes, date, price } = data;
 
     const images = `assets/photographers/${image}`;
 
+// console.log(images)
 
     const videoSource = `assets/photographers/${video}`;
-console.log(images)
-    console.log(videoSource) // LE UNDEFINED EST ICI MAIS POURQUOI DONC ?
 
     // CREATION DU MODELE DE LA GALERIE DES DIAPOSITIVES APRES LE CLIC SUR UNE DES IMAGES OU PHOTOS
 
@@ -45,7 +43,7 @@ console.log(images)
         const linkImgCarrou = '#'
         linkImgCarrousel.setAttribute('href', linkImgCarrou)   
 
-        console.log(image)
+        // console.log(image)
 
       //CREATION DE L'IMAGE OU DE LA VIDEO QUI SERA CLIQUABLE POUR LANCER LA LIGHTBOX
     if(image !== undefined) {
@@ -114,11 +112,11 @@ console.log(images)
     // LIGHTBOX
 
     const listeImg = data.media;  // Liste des médias
-    console.log(listeImg)
+console.log(listeImg) // OK MEDIA DU PHOTOGRAPHE SUR LA PAGE
 
 
     let myBox = new Lightbox(listeImg);
-    console.log(myBox)
+    // console.log(myBox) // PASSE BIEN EN PARAMETRE 2 UN ARRAYS DES MEDIAS
 
     document.querySelectorAll('.div-lien').forEach((el) => { 
         el.addEventListener('click', (e) => {
@@ -128,8 +126,4 @@ console.log(images)
     })
     return divContent;
 }
-
-
-
- 
 

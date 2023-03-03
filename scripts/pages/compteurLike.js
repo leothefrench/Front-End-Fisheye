@@ -12,7 +12,7 @@
             const button = event.currentTarget;
             let isLiked = button.getAttribute('data-isliked');
 
-            console.log(button)
+            // console.log(button)
             
             const counter = button.parentElement.children[0]
             let count = parseInt(counter.textContent)

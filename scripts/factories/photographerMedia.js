@@ -3,7 +3,6 @@ function infoDisplay(data) {
     const { name, portrait, id, city, country, tagline, price} = data;
     const picture = `assets/photographers/${portrait}`;
 
-
     function getUserCardDOM() {
         const section = document.createElement( 'section' );
 
@@ -119,6 +118,8 @@ function factoryMedia(data) {
         const paragraphIcon = document.createElement('p')       // MY COUNTER OF LIKES
         paragraphIcon.classList.add('paragraph-icon')
         paragraphIcon.setAttribute('data-set', id)
+        paragraphIcon.setAttribute('tabindex', '0')
+        paragraphIcon.setAttribute('aria-label', 'Nombre de likes')
         paragraphIcon.textContent = `${likes}`;
 
         // CREATION ICON BUTTON
@@ -126,6 +127,9 @@ function factoryMedia(data) {
         iconButton.classList.add('heart-link')  
         iconButton.setAttribute('data-isliked', false)  
         iconButton.setAttribute('data-set', id) // AJOUT ID SUR BOUTON
+        iconButton.setAttribute('tabindex', '0')
+        iconButton.setAttribute('role', 'button')
+        iconButton.setAttribute('aria-label', 'Liker cette photo')
 
 
         

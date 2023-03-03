@@ -14,7 +14,7 @@ function photographerFactory(data) {
         // CREATION IMAGE (avec src & alt) - 
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture)
-        img.setAttribute('alt', name)   
+        img.setAttribute('alt', '')   
 
         // CREATION H2 DE L'IMAGE
         const h2 = document.createElement( 'h2' );
