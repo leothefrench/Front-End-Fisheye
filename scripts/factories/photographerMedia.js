@@ -82,7 +82,7 @@ function factoryMedia(data) {
         imagesPhotographe.setAttribute('src', images)
         imagesPhotographe.style.width = '350px'
         imagesPhotographe.style.height = '351px'
-        imagesPhotographe.setAttribute('alt', 'why-not')
+        imagesPhotographe.setAttribute('alt', title)
         
         linkImg.appendChild(imagesPhotographe)  // AJOUT IMAGE DANS LE LIEN
         divLien.appendChild(linkImg)

@@ -37,7 +37,7 @@ function photographerFactory(data) {
         const divParagraphPhoto = document.createElement('div')
 
         // CREATION DES 3 PARAGRAPHES & AJOUT CLASS & CONTENU
-        const paragraphOne = document.createElement('p')    
+        const paragraphOne = document.createElement('h3')    
         paragraphOne.classList.add('paragraphOne')          
         paragraphOne.textContent = `${city}, ${country}`    
 
