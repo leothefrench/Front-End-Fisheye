@@ -1,14 +1,19 @@
 
 function lightbox(data) {
     console.log(data) // RETOURNE BIEN LES DATAS DU PHOTOGRAPHE ET SES MEDIAS
+    
+    // let pouf = data[0];
+    
+    // console.log(pouf)
 
-    const { id, photographerId, title, image, video, likes, date, price } = data;
+    const {id, photographerId, title, image, video, likes, date, price}  = data
 
     const images = `assets/photographers/${image}`;
 
-// console.log(images)
+console.log(images)
 
     const videoSource = `assets/photographers/${video}`;
+    console.log(videoSource)
 
     // CREATION DU MODELE DE LA GALERIE DES DIAPOSITIVES APRES LE CLIC SUR UNE DES IMAGES OU PHOTOS
 
@@ -106,17 +111,17 @@ function lightbox(data) {
             rightButton.appendChild(rightIconSpan)
 
             divContent.appendChild(divRightButton) // AJOUT DIV CONTENANT LA RIGHT ARROW FOR NEXT FUNCTION
-
+        
             lightbox.appendChild(divContent)
 
     // LIGHTBOX
 
-    const listeImg = data.media;  // Liste des médias
+    const listeImg = data;  // Liste des médias
 console.log(listeImg) // OK MEDIA DU PHOTOGRAPHE SUR LA PAGE
 
 
-    let myBox = new Lightbox(listeImg);
-    // console.log(myBox) // PASSE BIEN EN PARAMETRE 2 UN ARRAYS DES MEDIAS
+    let myBox = new Lightbox(data);
+    console.log(myBox) // PASSE BIEN EN PARAMETRE 2 UN ARRAYS DES MEDIAS
 
     document.querySelectorAll('.div-lien').forEach((el) => { 
         el.addEventListener('click', (e) => {

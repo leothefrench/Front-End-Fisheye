@@ -115,7 +115,7 @@ function factoryMedia(data) {
         const divLikes = document.createElement('div')
 
         // PARAGRAPHE NBRE LIKES
-        const paragraphIcon = document.createElement('p')       // MY COUNTER OF LIKES
+        const paragraphIcon = document.createElement('h4')       // MY COUNTER OF LIKES
         paragraphIcon.classList.add('paragraph-icon')
         paragraphIcon.setAttribute('data-set', id)
         paragraphIcon.setAttribute('tabindex', '0')
@@ -165,9 +165,8 @@ function factoryMedia(data) {
 }
 
 
-
-
 // CREATION DIV NBRE DE LIKES & ICON COEUR
+
 const divBottom = document.querySelector('.bottomHeart')
 
 const divNumberLikes = document.createElement('div')
@@ -175,6 +174,7 @@ divNumberLikes.classList.add('count-likes')
 
 // PARAGRAPHE NUMBER LIKES & ICON IN SPAN
 const numberLikes = document.createElement('p')
+numberLikes.setAttribute('role', 'paragraph')
 numberLikes.classList.add('counter')
 numberLikes.textContent = '0'
 

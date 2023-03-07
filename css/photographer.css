@@ -22,24 +22,54 @@
     font-family: 'DM Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 40px;
+    font-size: 64px;
     font-weight: 400;
     line-height: 83px;
     text-align: center;
-    margin-top: .5rem;
-    margin-bottom: 0;
+    padding-left: 50px;
+    margin-bottom: 16px;
+    margin-top: 71px;
 }
 
-.photograph-header section p {
-    padding-left: 50px;
+/* London, UK */
+.paragraphOne {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+
+    color: #901C1C;
+    margin-bottom: 19px;
 }
+
+.paragraphTwo {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+
+    color: #525252;
+}
+
+/* .photograph-header section p {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+
+    color: #901C1C;
+} */
 
 .photograph-header section img {
     height: 200px;
     width: 200px;
     /* Mes Ajouts de style */
     border-radius: 50%;
-    margin-right: 150px;
+    margin-right: 50px;
+    margin-top: 56px;
 }
 
 .contact_button {
@@ -53,6 +83,7 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 137px;
 }
 
 /* MODAL */
@@ -123,9 +154,11 @@ form input {
 .message-error {
     display: none;
 }
+
 #message {
     border-radius: 5px;
 }
+
 /* DROPDOWN MENU STYLING*/
 
 .filter {
@@ -151,8 +184,9 @@ form input {
     border-radius: 5px;
     color :#fff;
     cursor: pointer;
-    background-color: #911C1C;
+    background-color: #901C1C;
     transition: background-color 0.2s;
+    margin-top: 9px;
 }
 
 .select:hover {

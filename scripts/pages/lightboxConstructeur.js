@@ -3,6 +3,7 @@ class Lightbox {
         
         this._currentElement = null;
         this._listElement = listElement;
+
         this.manageEvent()
     }
 
@@ -17,7 +18,7 @@ class Lightbox {
     next() {
         let index = this._listElement.findIndex(element => element.id == this._currentElement.id)
 
-console.log(index)
+// console.log(index)
 
         if( index == this._listElement.length - 1) {
             this._currentElement = this._listElement[0] // POUR AVOIR UN RETOUR AU PREMIER INDEX UNE FOIS EN FIN DE CARROUSEL
@@ -57,18 +58,25 @@ console.log(index)
    
     getElementById(id) {
          
-         let pouf = this._listElement.find(element => element.id == id);
-         console.log(pouf)
-        return pouf;
+         let idInListElement = this._listElement.find(element => element.id == id);
+         console.log(idInListElement)
+        return idInListElement;
     }
-    
-    display() {
-        console.log(`assets/photographers/${this._currentElement.image}`)
-        document.querySelector('.photoOuVideo').src = `assets/photographers/${this._currentElement.image}`; // CORRECTION A FAIRE - CAR NOS AVONS AUSSI DES VIDEOS
 
+
+display() {
+        const image = `assets/photographers/${this._currentElement.image}`; // CORRECTION A FAIRE - CAR NOS AVONS AUSSI DES VIDEOS
+        
+        
+        const img = document.createElement('img')
+        img.setAttribute('src', image)
+        img.setAttribute('width', '500px')
+        document.querySelector('.carrouselImage a').innerHTML = ''
+        document.querySelector('.carrouselImage a').append(img)
+        document.querySelector('.carrouselImage').innerHTML
         document.querySelector('.lightbox').classList.add('show')
     }
-
+  
     close() {
         document.querySelector('.lightbox').classList.remove('show')    
     }

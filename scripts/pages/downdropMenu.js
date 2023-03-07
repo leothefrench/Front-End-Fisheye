@@ -180,8 +180,6 @@ const selected = document.querySelector('.selected')
         }
       })
     })
-    
-
     return (sectionFilter)
 }
 

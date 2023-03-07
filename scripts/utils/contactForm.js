@@ -21,7 +21,7 @@ function closeModal() {
 
 /* VERIFICATION DE LA MODALE */
 
-function verificationModal(photographeCourant) {
+function verificationModal() {
     const inputFirstName = document.querySelector('.firstName-input')
     const inputLastName = document.querySelector('.lastName-input')
     const inputEmail = document.querySelector('#email')
@@ -38,12 +38,21 @@ let verificationDeFirst
 /* CHECKING OF FIRSTNAME INPUT */
 inputFirstName.addEventListener('input', (e) => {
     if(e.target.value.length <= 2) {
+        console.log(e.target.value.length)
         errorMessage[0].style.display = 'inline'
         inputFirstName.classList.add('echec')
         inputFirstName.classList.add('border')
 
+    errorMessage.innerText = "Veuillez entrer 2 caractères minimum"
+    errorMessage.style.color = 'red';
+    errorMessage.style.fontSize = '.9rem'
+
         verificationDeFirst = false
     } else {
+
+    errorMessage.innerText = 'champs valide'
+    errorMessage.style.color = 'green'
+    errorMessage.style.fontSize = '.9rem'
         errorMessage[0].style.display ='none'
         verificationDeFirst = true
     }
