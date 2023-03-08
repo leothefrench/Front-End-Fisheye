@@ -86,6 +86,11 @@
     margin-top: 137px;
 }
 
+.contact_button:hover, .contact_button:focus {
+    background-color: #D3573C;
+    color: #000;
+}
+
 /* MODAL */
 
 .modal {

@@ -81,7 +81,7 @@ function factoryMedia(data) {
         imagesPhotographe.classList.add('photoOuVideo')
         imagesPhotographe.setAttribute('src', images)
         imagesPhotographe.style.width = '350px'
-        imagesPhotographe.style.height = '351px'
+        imagesPhotographe.style.height = '300px'
         imagesPhotographe.setAttribute('alt', title)
         
         linkImg.appendChild(imagesPhotographe)  // AJOUT IMAGE DANS LE LIEN
@@ -94,7 +94,7 @@ function factoryMedia(data) {
         videoPhotographe.setAttribute('src', videoSource)
         videoPhotographe.setAttribute('type', 'video/mp4')
         videoPhotographe.style.width = '350px'
-        videoPhotographe.style.height = '351px'
+        videoPhotographe.style.height = '300px'
         
         linkImg.appendChild(videoPhotographe)  // AJOUT VIDEO DANS LE LIEN
         divLien.appendChild(linkImg)

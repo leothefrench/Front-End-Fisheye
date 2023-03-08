@@ -35,6 +35,7 @@ function photographerFactory(data) {
 
         // CREATION DIV DES PARAPGRAPHES SOUS PHOTOS
         const divParagraphPhoto = document.createElement('div')
+        divParagraphPhoto.setAttribute('tabindex', "0")
 
         // CREATION DES 3 PARAGRAPHES & AJOUT CLASS & CONTENU
         const paragraphOne = document.createElement('h3')    

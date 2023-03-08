@@ -1,19 +1,14 @@
 
 function lightbox(data) {
-    console.log(data) // RETOURNE BIEN LES DATAS DU PHOTOGRAPHE ET SES MEDIAS
-    
-    // let pouf = data[0];
-    
-    // console.log(pouf)
+    // console.log(data) // RETOURNE BIEN LES DATAS DU PHOTOGRAPHE ET SES MEDIAS
 
     const {id, photographerId, title, image, video, likes, date, price}  = data
-
     const images = `assets/photographers/${image}`;
 
-console.log(images)
+// console.log(images)
 
     const videoSource = `assets/photographers/${video}`;
-    console.log(videoSource)
+    // console.log(videoSource)
 
     // CREATION DU MODELE DE LA GALERIE DES DIAPOSITIVES APRES LE CLIC SUR UNE DES IMAGES OU PHOTOS
 
@@ -125,8 +120,10 @@ console.log(listeImg) // OK MEDIA DU PHOTOGRAPHE SUR LA PAGE
 
     document.querySelectorAll('.div-lien').forEach((el) => { 
         el.addEventListener('click', (e) => {
-            console.log(e.currentTarget.dataset.id)
-            myBox.show(e.currentTarget.dataset.id);                            
+            // console.log(e.currentTarget.dataset.id)
+              
+            myBox.show(e.currentTarget.dataset.id);   
+                     
         })
     })
     return divContent;

@@ -21,7 +21,6 @@
             let countGlobal = parseInt(globalCounter.textContent)
             // countGlobal.textContent = sumArrayOfNumbers() // CODAGE DE CETTE FUNCTION POUR AVOIR LE TOTAL DES LIKES DU DEPART
 
-
             // console.log(isLiked)
             // console.log(typeof (isLiked))
 

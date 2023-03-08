@@ -141,6 +141,7 @@ const selected = document.querySelector('.selected')
 
             comptageLike() // REHYDRATATION DES ADD EVENT LISTENER
 
+
             break
           case 'popularite':
 
