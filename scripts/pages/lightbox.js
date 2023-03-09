@@ -1,6 +1,10 @@
 
 function lightbox(data) {
-    // console.log(data) // RETOURNE BIEN LES DATAS DU PHOTOGRAPHE ET SES MEDIAS
+    console.log(data) // RETOURNE BIEN LES DATAS DU PHOTOGRAPHE ET SES MEDIAS
+
+
+
+
 
     const {id, photographerId, title, image, video, likes, date, price}  = data
     const images = `assets/photographers/${image}`;
@@ -62,7 +66,7 @@ function lightbox(data) {
             linkImgCarrousel.appendChild(titleImage)
             carrouselImage.appendChild(linkImgCarrousel) // AJOUT DU LIEN LINKIMGCARROUSEL A LA DIV CARROUSEL IMAGE
 
-    } else {
+    } else { 
             const videoPhoto = document.createElement('video')
             videoPhoto.classList.add('photoOuVideo')
             videoPhoto.setAttribute('src', videoSource)
@@ -120,7 +124,7 @@ console.log(listeImg) // OK MEDIA DU PHOTOGRAPHE SUR LA PAGE
 
     document.querySelectorAll('.div-lien').forEach((el) => { 
         el.addEventListener('click', (e) => {
-            // console.log(e.currentTarget.dataset.id)
+            console.log(e.currentTarget.dataset.id)
               
             myBox.show(e.currentTarget.dataset.id);   
                      

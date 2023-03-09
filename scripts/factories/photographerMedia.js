@@ -32,10 +32,11 @@ function infoDisplay(data) {
         const buttonContact = document.querySelector('.contact_button')
         section.appendChild(buttonContact)
 
-        // CREATION IMG TAG & ATTRIBUTs & STYLE
+        // CREATION IMG TAG & ATTRIBUTS & STYLE
         const img = document.createElement( 'img' ); // IL FAUT COMPARER LE FORMAT - PHOTO OU IMAGE
         img.setAttribute("src", picture)
         img.setAttribute('alt', name)
+        img.setAttribute('tabindex', '0')
         img.style.width = "200px"
         img.style.height = "200px"
         img.style.borderRadius = "50%"
@@ -60,7 +61,7 @@ function factoryMedia(data) {
                
         const article = document.createElement( 'article' );
 
-        // CREATION DE LA DIV CONTENANT LA PHOTO - N° de TABULATION 9
+        // CREATION DE LA DIV CONTENANT LA PHOTO
         const lightbox = document.createElement('div')
         lightbox.classList.add('isItYou')
 
@@ -108,6 +109,7 @@ function factoryMedia(data) {
         // TITRE IMAGE - N° de TABULATION 10
         const titlePhoto = document.createElement('h3')
         titlePhoto.classList.add('h3-photo')
+        titlePhoto.setAttribute('tabindex', '0')
         titlePhoto.textContent = `${title}`
         divTitleAndHeart.appendChild(titlePhoto)
 

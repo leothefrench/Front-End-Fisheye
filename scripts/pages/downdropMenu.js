@@ -1,17 +1,19 @@
-// CREATION DE LA FONCTION DROPDOWN MENU POUR FILTRAGE DES CHOIX
+// CREATION DE LA FONCTION DROPDOWN MENU POUR FILTRAGE DES CHOIX UTILISATEUR
     function dropDownMenu(data) {
-    // console.log(data)
+    // console.log(data) 
         // CREATION SECTION CONTENANT TITRE H3 & DROPDOWN MENU
         const sectionFilter = document.createElement('section')
         sectionFilter.classList.add('filter')
         // CREATION DU TITRE H3
         const titleTrierPar = document.createElement('h3')
         titleTrierPar.classList.add('trier-par')
+        titleTrierPar.setAttribute('tabindex', '0')
         titleTrierPar.textContent = 'Trier par'
         sectionFilter.appendChild(titleTrierPar)
         // CREATION DROPDOWN MENU 
         const divDropdownMenu = document.createElement('div')
         divDropdownMenu.classList.add('dropdown')
+        divDropdownMenu.setAttribute('tabindex', '0')
         sectionFilter.appendChild(divDropdownMenu)
 
         const select = document.createElement('div')
@@ -142,6 +144,8 @@ const selected = document.querySelector('.selected')
             comptageLike() // REHYDRATATION DES ADD EVENT LISTENER
 
 
+            lightbox(data.media) 
+
             break
           case 'popularite':
 
@@ -157,7 +161,7 @@ const selected = document.querySelector('.selected')
             });
 
            comptageLike() // REHYDRATATION DES ADD EVENT LISTENER
-         
+               lightbox(data.media) 
             break
           case 'titre':
 
@@ -173,7 +177,7 @@ const selected = document.querySelector('.selected')
             });
 
            comptageLike() // REHYDRATATION DES ADD EVENT LISTENER
-
+      lightbox(data.media) 
             break
             
           default:

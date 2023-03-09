@@ -57,35 +57,37 @@ class Lightbox {
     // POUR OBTENIR L'ID DE
    
     getElementById(id) {
-         
+          console.log(this._listElement)
          let idInListElement = this._listElement.find(element => element.id == id);
-         console.log(idInListElement)
+
+        
+
         return idInListElement;
     }
 
 
 display() {
-        const image = `assets/photographers/${this._currentElement.image}`; // CORRECTION A FAIRE - CAR NOS AVONS AUSSI DES VIDEOS
+        const image = `assets/photographers/${this._currentElement.image}`
         
-        const videoPhoto = `assets/photographers/${this._currentElement.video}`; 
-        // console.log(videoPhoto)    // AFFICHE BIEN UNDEFINED LORSQUE C'EST UNE IMAGE ET LE BON CHEMIN LORSQUE C'EST UNE VIDEO
+        const videoPhoto = `assets/photographers/${this._currentElement.video}`
 
-        // const videoMP4 = videoPhoto.endsWith('.mp4')
         
-        if (this._currentElement.image) {
+        if (this._currentElement.image) { 
             const img = document.createElement('img')
             img.setAttribute('src', image)
-            img.setAttribute('width', '500px')
+            img.setAttribute('width', '50%')
             document.querySelector('.carrouselImage a').innerHTML = ''
             document.querySelector('.carrouselImage a').append(img)
             document.querySelector('.carrouselImage').innerHTML
             document.querySelector('.lightbox').classList.add('show') // OKAY  LES IMAGES S'AFFICHENT
+
+            // JE DOIS RAJOUTER AUSSI LE TITRE DES IMAGES
         } else {
             const videoElement = document.createElement('video') // LA VIDEO NE S'AFFICHENT PAS
             videoElement.setAttribute('src', videoPhoto)
             videoElement.setAttribute('type', 'video/mp4') // ICI HUM HUM ENDSWITH('.mp4)
-            videoElement.setAttribute('width', '400px')
-            videoElement.setAttribute('height', '400px')
+            videoElement.setAttribute('width', '50%%')
+            // videoElement.setAttribute('height', '400px')
             videoElement.setAttribute('controls', true)
             document.querySelector('.carrouselImage a').innerHTML = ''
             document.querySelector('.carrouselImage a').append(videoElement)

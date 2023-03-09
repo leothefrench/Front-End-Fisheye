@@ -38,7 +38,7 @@ function photographerFactory(data) {
         divParagraphPhoto.setAttribute('tabindex', "0")
 
         // CREATION DES 3 PARAGRAPHES & AJOUT CLASS & CONTENU
-        const paragraphOne = document.createElement('h3')    
+        const paragraphOne = document.createElement('h3')   
         paragraphOne.classList.add('paragraphOne')          
         paragraphOne.textContent = `${city}, ${country}`    
 
