@@ -18,15 +18,18 @@
 
         const select = document.createElement('div')
         select.classList.add('select')
+        select.setAttribute('tabindex', '0')
         divDropdownMenu.appendChild(select)
 
         const spanSelected = document.createElement('span')
         spanSelected.classList.add('selected')
+        spanSelected.setAttribute('tabindex', '0')
         spanSelected.textContent = 'Popularité'
         select.appendChild(spanSelected)
 
         const divArrow = document.createElement('div')
         divArrow.classList.add('arrow')
+        divArrow.setAttribute('tabindex', '0')
         divArrow.innerHTML = '<i class="fa-solid fa-chevron-up"></i>'
         select.appendChild(divArrow)
 
@@ -34,6 +37,7 @@
         const divContainerChoice = document.createElement('div')
         divContainerChoice.classList.add('filter-options-container')
         divContainerChoice.setAttribute('role', 'listbox')
+        divContainerChoice.setAttribute('tabindex', '0') // A VERIFIER ENCORE
 
         // CREATION DES TROIS SPANS TAG POUR LES 3 CHOIX
         const aFirstChoicePopularite = document.createElement('span')
@@ -47,6 +51,7 @@
         aFirstChoicePopularite.setAttribute('aria-label', 'Trier par popularité')
         aFirstChoicePopularite.setAttribute('aria-selected', 'true')
         aFirstChoicePopularite.setAttribute('id', 'popularite')
+        aFirstChoicePopularite.setAttribute('tabindex', '0')
         aFirstChoicePopularite.textContent = "Popularité"
         // SECOND CHOICE - DATE
         aSecondChoiceDate.classList.add('filter-option')
@@ -54,6 +59,7 @@
         aSecondChoiceDate.setAttribute('aria-label', 'Trier par date')
         aSecondChoiceDate.setAttribute('aria-selected', 'false')
         aSecondChoiceDate.setAttribute('id', 'date')
+        aSecondChoiceDate.setAttribute('tabindex', '0')
         aSecondChoiceDate.textContent = "Date"
         // THIRD CHOICE - TITRE
         aThirdChoiceTitre.classList.add('filter-option')
@@ -61,6 +67,7 @@
         aThirdChoiceTitre.setAttribute('aria-label', 'Trier par titre')
         aThirdChoiceTitre.setAttribute('aria-selected', 'false')
         aThirdChoiceTitre.setAttribute('id', 'titre')
+        aThirdChoiceTitre.setAttribute('tabindex', '0')
         aThirdChoiceTitre.textContent = "Titre"
 
         // ADD THREE LINKS IN DIV FILTER-SELECT

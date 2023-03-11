@@ -1,20 +1,33 @@
 #contact_modal {
     display: none;
+    margin-top: 62px;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    height: 50px;
+    margin-left: 100px;
+    margin-top: 20px;
 }
 
 .photograph-header {
     background-color: #FAFAFA;
     height: 313px;
-    width: 1240px; /* Dimension suivant maquettes */
+    /* width: 1240px;  */
     margin: 0 100px;
 }
-
-/* Style de article dans la div photograph-header */
 
 .photograph-header section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 40px;
 }
 
 .photograph-header section h2 {
@@ -32,7 +45,7 @@
 }
 
 /* London, UK */
-.paragraphOne {
+.photograph-header section .paragraphOne {
     font-family: 'DM Sans';
     font-style: normal;
     font-weight: 400;
@@ -40,6 +53,8 @@
     line-height: 31px;
 
     color: #901C1C;
+    padding-left: 50px;
+    margin-top: 0;
     margin-bottom: 19px;
 }
 
@@ -51,6 +66,7 @@
     line-height: 23px;
 
     color: #525252;
+    padding-left: 50px;
 }
 
 /* .photograph-header section p {
@@ -88,7 +104,7 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 137px;
+    margin-top: 26px;
 }
 
 .contact_button:hover, .contact_button:focus {
@@ -118,6 +134,7 @@
 }
 
 .modal header {
+    display: flex;
     justify-content: space-between;
     width: 100%;
 }
@@ -131,6 +148,7 @@
     font-size: 34px;
     font-weight: normal;
     text-align: center;
+    margin-top: 0;
 }
 
 form {
@@ -168,6 +186,16 @@ form input {
 #message {
     border-radius: 5px;
 }
+
+.modal-close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+
+
 
 /* DROPDOWN MENU STYLING*/
 
@@ -359,14 +387,14 @@ video {
 /* *********** LIGHT BOX *********** */
 .lightbox {
     position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background: #80808080;
+    width: 100vw; 
+    height: 100vh; 
+    background: #15bd1780;
     top: 0;
     left: 0;
-    display: flex;
+    /* display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: center; */
     display: none;
 }
 
@@ -389,10 +417,17 @@ video {
     width: 50px;
 }
 
-.carrouselImage {
-    display: block;
-}
 
+/* 
+.carrouselImage a {
+    width: fit-content;
+}*/
+/*
+.carrouselImage img {
+    width: fit-content;
+    
+}
+*/
 .divRightButton {
     height: 100%;
     display: flex;
@@ -402,4 +437,4 @@ video {
 
 .divCloseButton, .divInterneRightButton {
     width: 50%;
-}
+} 

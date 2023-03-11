@@ -12,11 +12,13 @@ function infoDisplay(data) {
         // CREATION H2 DE L'IMAGE - NOM PHOTOGRAPHE    
         const h2 = document.createElement( 'h2' );
         h2.textContent = name;
+        h2.setAttribute('tabindex', '0')
         photographerProfile.appendChild(h2)
 
         // CREATION DES 2 PARAGRAPHES
         const paragraphOne = document.createElement('p')   
         paragraphOne.classList.add('paragraphOne')          
+        paragraphOne.setAttribute('tabindex', '0')          
         paragraphOne.textContent = `${city}, ${country}`    
 
         const paragraphTwo = document.createElement('p')    
@@ -50,6 +52,37 @@ function infoDisplay(data) {
 
     return { name, picture, id, city, country, tagline, price, getUserCardDOM }
 }
+
+const divBottom = document.querySelector('.bottomHeart')
+// divBottom.setAttribute('tabindex', '-1')    // TABINDEX -1 POUR FAIRE UN FOCUS JS
+
+
+
+const divNumberLikes = document.createElement('div')
+divNumberLikes.classList.add('count-likes')
+
+// PARAGRAPHE NUMBER LIKES & ICON IN SPAN
+const numberLikes = document.createElement('p')
+numberLikes.setAttribute('role', 'paragraph')
+numberLikes.classList.add('counter')
+numberLikes.textContent = '0'
+
+const iconLikes = document.createElement('span')
+iconLikes.innerHTML = '<i class="fa-solid fa-heart"></i>'
+
+const tarifJour = document.createElement('p')
+tarifJour.classList.add('tarif-jour')
+tarifJour.textContent = '300€ / jour'
+
+divNumberLikes.appendChild(numberLikes)
+divNumberLikes.appendChild(iconLikes)
+
+divBottom.appendChild(divNumberLikes)
+divBottom.appendChild(tarifJour)
+
+
+// document.querySelector("[tabindex='-1']").focus()
+
 
 // FONCTION POUR INJECTION ENSEMBLE PHOTOS
 function factoryMedia(data) {
@@ -120,7 +153,7 @@ function factoryMedia(data) {
         const paragraphIcon = document.createElement('h4')       // MY COUNTER OF LIKES
         paragraphIcon.classList.add('paragraph-icon')
         paragraphIcon.setAttribute('data-set', id)
-        paragraphIcon.setAttribute('tabindex', '0')
+        // paragraphIcon.setAttribute('tabindex', '0')
         paragraphIcon.setAttribute('aria-label', 'Nombre de likes')
         paragraphIcon.textContent = `${likes}`;
 
@@ -133,10 +166,9 @@ function factoryMedia(data) {
         iconButton.setAttribute('role', 'button')
         iconButton.setAttribute('aria-label', 'Liker cette photo')
 
-
-        
         const spanIcon = document.createElement('span')
         iconButton.innerHTML = '<i class="fa-solid fa-heart"></i>'
+        iconButton.setAttribute('tabindex', '0')
         spanIcon.appendChild(iconButton)
 
         // AJOUT PARAGRAPHE ICON & IMG ICON A LA DIV divTitleAndHeart
@@ -169,29 +201,29 @@ function factoryMedia(data) {
 
 // CREATION DIV NBRE DE LIKES & ICON COEUR
 
-const divBottom = document.querySelector('.bottomHeart')
+// const divBottom = document.querySelector('.bottomHeart')
 
-const divNumberLikes = document.createElement('div')
-divNumberLikes.classList.add('count-likes')
+// const divNumberLikes = document.createElement('div')
+// divNumberLikes.classList.add('count-likes')
 
-// PARAGRAPHE NUMBER LIKES & ICON IN SPAN
-const numberLikes = document.createElement('p')
-numberLikes.setAttribute('role', 'paragraph')
-numberLikes.classList.add('counter')
-numberLikes.textContent = '0'
+// // PARAGRAPHE NUMBER LIKES & ICON IN SPAN
+// const numberLikes = document.createElement('p')
+// numberLikes.setAttribute('role', 'paragraph')
+// numberLikes.classList.add('counter')
+// numberLikes.textContent = '0'
 
-const iconLikes = document.createElement('span')
-iconLikes.innerHTML = '<i class="fa-solid fa-heart"></i>'
+// const iconLikes = document.createElement('span')
+// iconLikes.innerHTML = '<i class="fa-solid fa-heart"></i>'
 
-const tarifJour = document.createElement('p')
-tarifJour.classList.add('tarif-jour')
-tarifJour.textContent = '300€ / jour'
+// const tarifJour = document.createElement('p')
+// tarifJour.classList.add('tarif-jour')
+// tarifJour.textContent = '300€ / jour'
 
-divNumberLikes.appendChild(numberLikes)
-divNumberLikes.appendChild(iconLikes)
+// divNumberLikes.appendChild(numberLikes)
+// divNumberLikes.appendChild(iconLikes)
 
-divBottom.appendChild(divNumberLikes)
-divBottom.appendChild(tarifJour)
+// divBottom.appendChild(divNumberLikes)
+// divBottom.appendChild(tarifJour)
 
 
 

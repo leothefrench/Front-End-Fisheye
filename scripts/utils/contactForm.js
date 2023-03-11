@@ -1,25 +1,44 @@
+const body = document.querySelector('body')
+const openModalBtn = document.querySelector('.open-modal-btn') // OPEN BUTTON MODAL
+const main = document.getElementById('main')
+
+const modal = document.getElementById('contact_modal')
+const modalTitle = document.getElementById('modalTitle')
+const modalCloseBtn = document.querySelector('.modal-close-btn')
+ 
+// ARROW FUNCTION DISPLAY MODAL
 function displayModal() {
-    const modal = document.getElementById("contact_modal");
-    modal.classList.add('opened')   
-    // const closeBtn = document.querySelector('')
-    // closeBtn.focus()
-    const main = document.getElementById('main')
-    main.setAttribute('aria-hidden', true)
-	modal.style.display = "block";
+   main.setAttribute('aria-hidden', 'true')
+   modal.setAttribute('aria-hidden', 'false')
+   body.classList.add('no-scroll')
+   modal.style.display = 'flex'
+   modalCloseBtn.focus()
 }
 
 function closeModal() {
-    const modal = document.getElementById("contact_modal");
-    const main = document.getElementById('main')
-
-    modal.classList.remove('opened')
-    // main.setAttribute('aria-hidden', false)
-    // modal.setAttribute('aria-hidden', true)
-
-    modal.style.display = "none";
+   main.setAttribute('aria-hidden', 'false')
+   modal.setAttribute('aria-hidden', 'true')
+   body.classList.remove('no-scroll')
+   modal.style.display = 'none'
+   openModalBtn.focus()
 }
 
-/* VERIFICATION DE LA MODALE */
+// EVENT LISTENER FOR OPENING THE MODAL
+openModalBtn.addEventListener('click', displayModal);
+// EVENT LISTENER FOR CLOSING THE MODAL
+modalCloseBtn.click('click', closeModal)
+
+// CLOSE MODAL WHEN SPACE BAR (ESCAPE) KEY IS PRESSED
+
+openModalBtn.addEventListener('keydown', e => {
+   const keyCode = e.keyCode ? e.keyCode : e.which
+ 
+   if (modal.getAttribute('aria-hidden') == 'false' && keyCode === 27) {
+       closeModal()
+   }
+})
+
+/* CHECK MODAL */
 
 function verificationModal() {
     const inputFirstName = document.querySelector('.firstName-input')

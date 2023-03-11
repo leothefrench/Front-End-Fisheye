@@ -2,23 +2,20 @@
 function lightbox(data) {
     console.log(data) // RETOURNE BIEN LES DATAS DU PHOTOGRAPHE ET SES MEDIAS
 
-
-
-
-
     const {id, photographerId, title, image, video, likes, date, price}  = data
     const images = `assets/photographers/${image}`;
 
-// console.log(images)
+    // console.log(images)
 
     const videoSource = `assets/photographers/${video}`;
     // console.log(videoSource)
 
     // CREATION DU MODELE DE LA GALERIE DES DIAPOSITIVES APRES LE CLIC SUR UNE DES IMAGES OU PHOTOS
 
-    // CREATION DE MA DIV GLOBALE QUI VA CONTENIR MES 3 DIV
+    // CREATION DE LA DIV GLOBALE QUI VA CONTENIR MES 3 DIV (BOUTON LEFT & IMAGES 1 BOUTON RIGHT)
     const divContent = document.createElement('div')
     divContent.classList.add('content')
+    divContent.setAttribute('tabindex', '0')
   
             // DIV LEFT FOR LEFT BUTTON
             let divLeftButton =  document.createElement('div')
@@ -26,6 +23,7 @@ function lightbox(data) {
             
             let leftButton = document.createElement('button')
             leftButton.classList.add('previous')
+            leftButton.setAttribute('tabindex', '0')
             let leftIconSpan = document.createElement('span')
             leftIconSpan.innerHTML = `<i class="fas fa-angle-left"></i>`
             leftButton.appendChild(leftIconSpan)
@@ -46,6 +44,7 @@ function lightbox(data) {
         const linkImgCarrousel =  document.createElement('a')
         const linkImgCarrou = '#'
         linkImgCarrousel.setAttribute('href', linkImgCarrou)   
+        linkImgCarrousel.setAttribute('tabindex', '0')   
 
         // console.log(image)
 
@@ -89,10 +88,12 @@ function lightbox(data) {
             // DIV FOR RIGHT BUTTON
             let divRightButton =  document.createElement('div')
             divRightButton.classList.add('divRightButton')
+            divRightButton.setAttribute('tabindex', '0')
 
             const divCloseButton = document.createElement('div')
             divCloseButton.classList.add('divCloseButton')
             let btnCloseLightbox = document.createElement('button')
+            btnCloseLightbox.setAttribute('tabindex', '0')
             btnCloseLightbox.classList.add('closeLightbox')
             btnCloseLightbox.textContent = 'x'
             divCloseButton.appendChild(btnCloseLightbox)
@@ -100,6 +101,7 @@ function lightbox(data) {
             const divInterneRightButton = document.createElement('div')
             divInterneRightButton.classList.add('divInterneRightButton')
             let rightButton = document.createElement('button')
+            rightButton.setAttribute('tabindex', '0')
             rightButton.classList.add('next')
             divInterneRightButton.appendChild(rightButton)
 
