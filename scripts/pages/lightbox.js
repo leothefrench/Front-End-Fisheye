@@ -1,6 +1,6 @@
 
 function lightbox(data) {
-    console.log(data) // RETOURNE BIEN LES DATAS DU PHOTOGRAPHE ET SES MEDIAS
+    // console.log(data) // RETOURNE BIEN LES DATAS DU PHOTOGRAPHE ET SES MEDIAS
 
     const {id, photographerId, title, image, video, likes, date, price}  = data
     const images = `assets/photographers/${image}`;
@@ -16,6 +16,7 @@ function lightbox(data) {
     const divContent = document.createElement('div')
     divContent.classList.add('content')
     divContent.setAttribute('tabindex', '0')
+    divContent.setAttribute('aria-label', 'image closeup view')
   
             // DIV LEFT FOR LEFT BUTTON
             let divLeftButton =  document.createElement('div')
@@ -37,7 +38,6 @@ function lightbox(data) {
             let carrouselImage = document.createElement('div')
             carrouselImage.classList.add('carrouselImage')
 
-
     // FAIRE LA CREATION D'UN LIEN QUI CONTENDRA L'IMAGE - PUIS ON AJOUTE L'IMAGE OU LA VIDEO A CE LIEN
 
         // CREATION DU LIEN QUI CONTIENDRA LA PHOTO CLIQUABLE POUR LANCER LA LIGHTBOX
@@ -53,32 +53,30 @@ function lightbox(data) {
             const imageCenter = document.createElement('img')
             imageCenter.classList.add('photoOuVideo')
             imageCenter.setAttribute('src', images)
-            imageCenter.style.width = '80vw'
-            imageCenter.style.height = '80vh'
             imageCenter.setAttribute('alt', 'why-not')
 
-            const titleImage = document.createElement('h3')
-            titleImage.classList.add('titleImage')
-            titleImage.textContent= `${title}`
-            // imageCenter.setAttribute('src', videoSource)
-            linkImgCarrousel.appendChild(imageCenter)
-            linkImgCarrousel.appendChild(titleImage)
-            carrouselImage.appendChild(linkImgCarrousel) // AJOUT DU LIEN LINKIMGCARROUSEL A LA DIV CARROUSEL IMAGE
+            // const titleImage = document.createElement('h3') 
+            // titleImage.classList.add('titleImage')
+            // titleImage.textContent= `${title}`
+            // // imageCenter.setAttribute('src', videoSource)
+            // linkImgCarrousel.appendChild(imageCenter)
+            // linkImgCarrousel.appendChild(titleImage)
+            carrouselImage.appendChild(linkImgCarrousel) 
 
     } else { 
             const videoPhoto = document.createElement('video')
             videoPhoto.classList.add('photoOuVideo')
             videoPhoto.setAttribute('src', videoSource)
             videoPhoto.setAttribute('type', 'video/mp4')
-            videoPhoto.style.width = '80vw'
-            videoPhoto.style.height = '80vh'
+            videoPhoto.style.width = '400px'
+            videoPhoto.style.height = '301px'
 
-            const titleImage = document.createElement('h3')
-            titleImage.classList.add('titleImage')
-            titleImage.textContent = `${title}`
+            // const titleImage = document.createElement('h3')
+            // titleImage.classList.add('titleImage')
+            // titleImage.textContent = `${title}`
 
-            linkImgCarrousel.appendChild(videoPhoto)
-            linkImgCarrousel.appendChild(titleImage)
+            // linkImgCarrousel.appendChild(videoPhoto)
+            // linkImgCarrousel.appendChild(titleImage)
 
             carrouselImage.appendChild(linkImgCarrousel) // AJOUT DU LIEN LINKIMGCARROUSEL A LA DIV CARROUSEL IMAGE         
     }
@@ -116,17 +114,12 @@ function lightbox(data) {
             lightbox.appendChild(divContent)
 
     // LIGHTBOX
-
-    const listeImg = data;  // Liste des médias
-console.log(listeImg) // OK MEDIA DU PHOTOGRAPHE SUR LA PAGE
-
-
     let myBox = new Lightbox(data);
-    console.log(myBox) // PASSE BIEN EN PARAMETRE 2 UN ARRAYS DES MEDIAS
+    // console.log(myBox) // PASSE BIEN EN PARAMETRE 2 UN ARRAYS DES MEDIAS
 
     document.querySelectorAll('.div-lien').forEach((el) => { 
         el.addEventListener('click', (e) => {
-            console.log(e.currentTarget.dataset.id)
+            // console.log(e.currentTarget.dataset.id)
               
             myBox.show(e.currentTarget.dataset.id);   
                      

@@ -53,8 +53,8 @@ async function init() {
 
         dropDownMenu(photographer)
         comptageLike(photographer)
-        lightbox(photographer.media) 
-
+        lightbox(photographer.media)
+        formulaire(photographer)
 
 };
     

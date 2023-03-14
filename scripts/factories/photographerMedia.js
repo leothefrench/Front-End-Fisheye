@@ -53,37 +53,6 @@ function infoDisplay(data) {
     return { name, picture, id, city, country, tagline, price, getUserCardDOM }
 }
 
-const divBottom = document.querySelector('.bottomHeart')
-// divBottom.setAttribute('tabindex', '-1')    // TABINDEX -1 POUR FAIRE UN FOCUS JS
-
-
-
-const divNumberLikes = document.createElement('div')
-divNumberLikes.classList.add('count-likes')
-
-// PARAGRAPHE NUMBER LIKES & ICON IN SPAN
-const numberLikes = document.createElement('p')
-numberLikes.setAttribute('role', 'paragraph')
-numberLikes.classList.add('counter')
-numberLikes.textContent = '0'
-
-const iconLikes = document.createElement('span')
-iconLikes.innerHTML = '<i class="fa-solid fa-heart"></i>'
-
-const tarifJour = document.createElement('p')
-tarifJour.classList.add('tarif-jour')
-tarifJour.textContent = '300€ / jour'
-
-divNumberLikes.appendChild(numberLikes)
-divNumberLikes.appendChild(iconLikes)
-
-divBottom.appendChild(divNumberLikes)
-divBottom.appendChild(tarifJour)
-
-
-// document.querySelector("[tabindex='-1']").focus()
-
-
 // FONCTION POUR INJECTION ENSEMBLE PHOTOS
 function factoryMedia(data) {
     const { id, photographerId, title, image, video, likes, date, price } = data;
@@ -201,29 +170,29 @@ function factoryMedia(data) {
 
 // CREATION DIV NBRE DE LIKES & ICON COEUR
 
-// const divBottom = document.querySelector('.bottomHeart')
+const divBottom = document.querySelector('.bottomHeart')
 
-// const divNumberLikes = document.createElement('div')
-// divNumberLikes.classList.add('count-likes')
+const divNumberLikes = document.createElement('div')
+divNumberLikes.classList.add('count-likes')
 
-// // PARAGRAPHE NUMBER LIKES & ICON IN SPAN
-// const numberLikes = document.createElement('p')
-// numberLikes.setAttribute('role', 'paragraph')
-// numberLikes.classList.add('counter')
-// numberLikes.textContent = '0'
+// PARAGRAPHE NUMBER LIKES & ICON IN SPAN
+const numberLikes = document.createElement('p')
+numberLikes.setAttribute('role', 'paragraph')
+numberLikes.classList.add('counter')
+numberLikes.textContent = '0'
 
-// const iconLikes = document.createElement('span')
-// iconLikes.innerHTML = '<i class="fa-solid fa-heart"></i>'
+const iconLikes = document.createElement('span')
+iconLikes.innerHTML = '<i class="fa-solid fa-heart"></i>'
 
-// const tarifJour = document.createElement('p')
-// tarifJour.classList.add('tarif-jour')
-// tarifJour.textContent = '300€ / jour'
+const tarifJour = document.createElement('p')
+tarifJour.classList.add('tarif-jour')
+tarifJour.textContent = '300€ / jour'
 
-// divNumberLikes.appendChild(numberLikes)
-// divNumberLikes.appendChild(iconLikes)
+divNumberLikes.appendChild(numberLikes)
+divNumberLikes.appendChild(iconLikes)
 
-// divBottom.appendChild(divNumberLikes)
-// divBottom.appendChild(tarifJour)
+divBottom.appendChild(divNumberLikes)
+divBottom.appendChild(tarifJour)
 
 
 
