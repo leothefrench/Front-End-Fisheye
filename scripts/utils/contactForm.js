@@ -1,9 +1,12 @@
 
 function formulaire(data) {
 
-    console.log(data)
+    // console.log(data)
+    let name = data[0].name;
+    // console.log(name)
 
     const divFormulaireBloc = document.querySelector('.formulaireBloc')
+    divFormulaireBloc.setAttribute('tabindex', '0')
     divFormulaireBloc.setAttribute('id', 'contact_modal')
     divFormulaireBloc.classList.add('modal')
     divFormulaireBloc.setAttribute('aria-hidden', 'true')
@@ -15,6 +18,7 @@ function formulaire(data) {
     // DIV CONTENANT LA DIV HEADER & DIV FORMULAIRE
     const divHeaderFormulaire = document.createElement('div')
     divHeaderFormulaire.classList.add('divHeaderFormulaire')
+    divHeaderFormulaire.setAttribute('tabindex', '0')
     divFormulaireBloc.appendChild(divHeaderFormulaire)
 
      // CREATION DU HEADER CONTENANT LE H2
@@ -25,7 +29,13 @@ function formulaire(data) {
     headerContactezMoi.setAttribute('id', 'modalTitle')
     headerContactezMoi.setAttribute('tabindex', '0')
     headerContactezMoi.classList.add('modal-title')
-    headerContactezMoi.textContent = 'Contactez moi'
+    headerContactezMoi.textContent = `Contactez moi ${name}`
+
+    // FOCUS SUR LE TITRE DE LA MODALE DE CONTACT
+    document.querySelector('.contact_button').addEventListener('click', () => {
+        headerContactezMoi.focus()
+    })
+    
     headerH2.appendChild(headerContactezMoi)
 
     divHeaderFormulaire.appendChild(headerH2)
@@ -37,6 +47,7 @@ function formulaire(data) {
     divFormulaire.classList.add('divFormulaire')
 
     const formulaire = document.createElement('form')
+    formulaire.classList.add('formulaireDeContact')
     // divFormulaire.appendChild(formulaire)
 
     // LABEL PRENOM
@@ -140,14 +151,16 @@ function formulaire(data) {
 
     const imgCloseButton = document.createElement('img')
     imgCloseButton.setAttribute('src', 'assets/icons/close.svg')
-    // imgCloseButton.setAttribute('tabindex', '-1')
+    imgCloseButton.setAttribute('tabindex', '-1')
     imgCloseButton.setAttribute('alt', 'Close Contact form')
     imgCloseButton.setAttribute('aria-label', 'Boutton de fermeture du formulaire de contact')
     buttonCloseModal.appendChild(imgCloseButton)
 
+
+    divFormulaire.appendChild(formulaire)
     divFormulaire.appendChild(buttonCloseModal)
 
-    divFormulaire.appendChild(formulaire, buttonCloseModal)
+
     divFormulaireBloc.appendChild(divFormulaire)
 // }
 
@@ -155,6 +168,8 @@ function formulaire(data) {
 const body = document.querySelector('body')
 const openModalBtn = document.querySelector('.open-modal-btn') // OPEN BUTTON MODAL
 const main = document.getElementById('main')
+
+// console.log(main)
 
 const modal = document.querySelector('.formulaireBloc')
 const modalTitle = document.getElementById('modalTitle')
@@ -173,7 +188,7 @@ function displayModal() {
    modal.setAttribute('aria-hidden', 'false')
    body.classList.add('no-scroll')
    modal.style.display = 'flex'
-   modalCloseBtn.focus()
+   modal.focus()
 }
 
 // EVENT LISTENER FOR CLOSING THE MODAL
@@ -189,7 +204,7 @@ function closeModal() {
 
 // CLOSE MODAL WHEN SPACE BAR (ESCAPE) KEY IS PRESSED
 
-openModalBtn.addEventListener('keydown', e => {
+window.addEventListener('keydown', e => {
    const keyCode = e.keyCode ? e.keyCode : e.which
  
    if (modal.getAttribute('aria-hidden') == 'false' && keyCode === 27) {
@@ -206,6 +221,8 @@ function verificationModal() {
     const inputMsg = document.querySelector('#message')
     const errorMessage = document.querySelectorAll('.message-error')
 
+    // console.log(errorMessage) // OKAY NODE LIST
+
 
 // DECLARATION VARIABLE QUI CONTIENDRONT LE BOOLEEN DE CHECKING
 let verificationDeFirst
@@ -216,22 +233,21 @@ let verificationDeFirst
 /* CHECKING OF FIRSTNAME INPUT */
 inputFirstName.addEventListener('input', (e) => {
     if(e.target.value.length <= 2) {
-        console.log(e.target.value.length)
+        // console.log(e.target.value.length)
         errorMessage[0].style.display = 'inline'
         inputFirstName.classList.add('echec')
         inputFirstName.classList.add('border')
 
-    errorMessage.innerText = "Veuillez entrer 2 caractères minimum"
-    errorMessage.style.color = 'red';
-    errorMessage.style.fontSize = '.9rem'
-
+    errorMessage[0].innerText = "Veuillez entrer 2 caractères minimum"
+    errorMessage[0].style.color = 'red';
+    errorMessage[0].style.fontSize = '1rem'
         verificationDeFirst = false
     } else {
 
-    errorMessage.innerText = 'champs valide'
-    errorMessage.style.color = 'green'
-    errorMessage.style.fontSize = '.9rem'
-        errorMessage[0].style.display ='none'
+    errorMessage[0].innerText = 'Champs valide'
+    errorMessage[0].style.color = 'green'
+    errorMessage[0].style.fontSize = '1rem'
+    errorMessage[0].style.display ='inline'
         verificationDeFirst = true
     }
 })
@@ -242,9 +258,15 @@ inputLastName.addEventListener('input', (e) => {
         inputFirstName.classList.add('echec')
         inputFirstName.classList.add('border')
 
+    errorMessage[1].innerText = "Veuillez entrer 2 caractères minimum"
+    errorMessage[1].style.color = 'red';
+    errorMessage[1].style.fontSize = '1rem'
         verificationDeLast = false
     } else {
-        errorMessage[0].style.display ='none'
+    errorMessage[1].innerText = 'Champs valide'
+    errorMessage[1].style.color = 'green'
+    errorMessage[1].style.fontSize = '1rem'
+    errorMessage[1].style.display ='inline'
         verificationDeLast = true
     }
 })
@@ -252,13 +274,21 @@ inputLastName.addEventListener('input', (e) => {
 inputEmail.addEventListener('input', (e) => {
     const regexEmail = /\S+@\S+\.\S+/
     if(e.target.value.search(regexEmail) === 0) {
-        errorMessage[2].style.display = 'none'
+
+    errorMessage[2].innerText = 'Champs valide'
+    errorMessage[2].style.color = 'green'
+    errorMessage[2].style.fontSize = '1rem'      
+    errorMessage[2].style.display = 'inline'
 
         verificationEmail = true
     } else {
         errorMessage[2].style.display ='inline'
         inputEmail.classList.add('echec')
         inputEmail.classList.add('border')
+
+    errorMessage[2].innerText = "Entrez Email Correct"
+    errorMessage[2].style.color = 'red';
+    errorMessage[2].style.fontSize = '1rem'
 
         verificationEmail = false
     }
@@ -267,29 +297,50 @@ inputEmail.addEventListener('input', (e) => {
 inputMsg.addEventListener('input', (e) => {
     if(e.target.value.length == 0) {
         errorMessage[3].style.display = 'inline'
+        errorMessage[3].innerText = 'Champs invalide'
+        errorMessage[3].style.color = 'red';
+        errorMessage[3].style.fontSize = '1rem'
         inputFirstName.classList.add('echec')
         inputFirstName.classList.add('border')
 
         verificationMsg = false
     } else {
-        errorMessage[3].style.display ='none'
+    errorMessage[3].innerText = 'Champs valide'
+    errorMessage[3].style.color = 'green'
+    errorMessage[3].style.fontSize = '1rem'      
+    errorMessage[3].style.display = 'inline'
         verificationMsg = true
     }
 })
 
 /* SUBMIT */
-document.querySelector('.contact_button').addEventListener((e) => {
-    e.preventDefault()
-
-    /* SI TOUTES LES VERIFICATION A TRUE ON FAIT CE QUI SUIT */
+document.querySelector('.modal').addEventListener('submit', (e) => {
+    e.preventDefault() // EVITE LE CHARGEMENT PAR DEFAUT DE LA PAGE LORS DU SUBMIT
+    /* SI TOUTES LES VERIFICATIONS A TRUE ON FAIT CE QUI SUIT */
     if(verificationDeFirst === true && verificationDeLast === true && verificationEmail === true && verificationMsg === true) {
 
-        alert(('Votre réservationé été reçue.'))    // CONFIRMATION APRES SOUMISSION DU FORMULAIRE
+        alert('Votre réservationé été reçue.')    // CONFIRMATION APRES SOUMISSION DU FORMULAIRE
+
+// LOGGING DES DONNEES ENTREES PAR L'UTILISATEUR
+        let formData = document.querySelector('.formulaireDeContact') // CIBLAGE FORMULAIRE
+
+    let inputFirstNameValue = null;
+    let inputLastNameValue = null;
+    let inputEmailValue = null;
+    let inputMsgValue = null;
+    
+    console.log(inputFirstName.value,inputLastName.value, inputEmail.value, inputMsg.value)
+
     } else {
 
     alert("Merci de bien remplir votre inscription"); // Alert box pour informer l'utilisateur à remplir correctement le formulaire
     e.preventDefault()  // Stop le comportement par défaut de l'envoi du formulaire
-    }       // lOG INFOS ENTREES PAR UTILISATEUR FAIRE AU LIEU D'UEN ALERTE
-})
+    }    
+    
+    // lOG INFOS ENTREES PAR UTILISATEUR FAIRE AU LIEU D'UNE ALERT
+
+
+    })
 }
+    verificationModal()
 }

@@ -1,7 +1,6 @@
 #contact_modal {
     display: none;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin-top: 10px;
 }
 
 body {
@@ -52,7 +51,6 @@ body {
     font-weight: 400;
     font-size: 24px;
     line-height: 31px;
-
     color: #901C1C;
     padding-left: 50px;
     margin-top: 0;
@@ -65,7 +63,6 @@ body {
     font-weight: 400;
     font-size: 18px;
     line-height: 23px;
-
     color: #525252;
     padding-left: 50px;
 }
@@ -73,7 +70,6 @@ body {
 .photograph-header section img {
     height: 200px;
     width: 200px;
-    /* Mes Ajouts de style */
     border-radius: 50%;
     margin-right: 50px;
     margin-top: 56px;
@@ -112,7 +108,6 @@ body {
     height: 85%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
     padding: 35px;
     margin-top: 0;
@@ -121,22 +116,16 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.modal header {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
 .modal header img {
     cursor: pointer;
     width: 34px;
 }
 
 .modal header h2 {
-    font-size: 34px;
+    font-size: 1.5rem;
     font-weight: normal;
-    text-align: center;
     margin-top: 0;
+    margin-bottom: 15px;
 }
 
 form {
@@ -149,7 +138,7 @@ form {
 
 form label {
     color: #312E2E;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 form div {
@@ -164,7 +153,7 @@ form input {
     height: 40px;
     border-radius: 5px;
     padding: .5rem;
-    margin: .5rem auto;
+    margin: 0 auto;
 }
 
 .message-error {
@@ -183,6 +172,10 @@ form input {
     margin-right: 30px;
     background-color: #DB8876;
     border: none;
+}
+
+.modal-close-btn img {
+    height: 1.7rem;
 }
 
 /* DROPDOWN MENU STYLING*/
@@ -205,7 +198,7 @@ form input {
     border-radius: 5px;
     color :#fff;
     cursor: pointer;
-    background-color: #901C1C;
+    background-color: #911C1C;
     transition: background-color 0.2s;
     margin-top: 9px;
 }
@@ -213,6 +206,16 @@ form input {
 .select:hover {
     background-color: #9d2f2f;
 }
+
+.selected {
+    background-color: #911C1C;
+    border: none;
+    color: #fff;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+}
+
 
 .arrow {
     padding-left: 26px;
@@ -228,7 +231,7 @@ transform: rotate(180deg);
     width: 170px;
     height: 170px;
     border-radius: 5px;
-    background-color: #901C1C;
+    background-color: #911C1C;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -237,12 +240,22 @@ transform: rotate(180deg);
     display: none;
     transition: 0.2s;
     z-index: 1;
+font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
 }
 
 .filter-option {
     padding: 1em;
+    background-color: #911C1C;
+    border: none;
+    color: #fff;
     border-bottom: 1px solid #fff;
     border-radius: 5px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    padding-left: 10px;
 }
 
 .filter-options-container > a {
@@ -258,7 +271,7 @@ transform: rotate(180deg);
 
 /* ACTIVE STYLE DANS LE dropdownMenu.js */
 .active {
-    background-color: #901C1C;
+    background-color: #911C1C;
 }
 /* OPEN STYLE DANS LE JS */
 .filter-options-container-open {

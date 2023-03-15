@@ -21,15 +21,15 @@
         select.setAttribute('tabindex', '0')
         divDropdownMenu.appendChild(select)
 
-        const spanSelected = document.createElement('span')
+        const spanSelected = document.createElement('button')
         spanSelected.classList.add('selected')
-        spanSelected.setAttribute('tabindex', '0')
+        // spanSelected.setAttribute('tabindex', '0')
         spanSelected.textContent = 'Popularité'
         select.appendChild(spanSelected)
 
         const divArrow = document.createElement('div')
         divArrow.classList.add('arrow')
-        divArrow.setAttribute('tabindex', '0')
+        // divArrow.setAttribute('tabindex', '0')
         divArrow.innerHTML = '<i class="fa-solid fa-chevron-up"></i>'
         select.appendChild(divArrow)
 
@@ -40,9 +40,9 @@
         divContainerChoice.setAttribute('tabindex', '0') // A VERIFIER ENCORE
 
         // CREATION DES TROIS SPANS TAG POUR LES 3 CHOIX
-        const aFirstChoicePopularite = document.createElement('span')
-        const aSecondChoiceDate = document.createElement('span')
-        const aThirdChoiceTitre = document.createElement('span')
+        const aFirstChoicePopularite = document.createElement('button')
+        const aSecondChoiceDate = document.createElement('button')
+        const aThirdChoiceTitre = document.createElement('button')
 
         //FIRST CHOICE - POPULARITE
         aFirstChoicePopularite.classList.add('filter-option')

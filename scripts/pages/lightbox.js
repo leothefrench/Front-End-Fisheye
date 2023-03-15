@@ -15,7 +15,7 @@ function lightbox(data) {
     // CREATION DE LA DIV GLOBALE QUI VA CONTENIR MES 3 DIV (BOUTON LEFT & IMAGES 1 BOUTON RIGHT)
     const divContent = document.createElement('div')
     divContent.classList.add('content')
-    divContent.setAttribute('tabindex', '0')
+//     divContent.setAttribute('tabindex', '0')
     divContent.setAttribute('aria-label', 'image closeup view')
   
             // DIV LEFT FOR LEFT BUTTON
@@ -86,7 +86,7 @@ function lightbox(data) {
             // DIV FOR RIGHT BUTTON
             let divRightButton =  document.createElement('div')
             divRightButton.classList.add('divRightButton')
-            divRightButton.setAttribute('tabindex', '0')
+        //     divRightButton.setAttribute('tabindex', '0')
 
             const divCloseButton = document.createElement('div')
             divCloseButton.classList.add('divCloseButton')

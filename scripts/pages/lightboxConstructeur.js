@@ -40,6 +40,7 @@ class Lightbox {
 
         this.display();
     }
+
     // POUR LA GESTION DES EVENEMENTS CLICKS
     manageEvent() {
         document.querySelector('.next').addEventListener('click', () => {
@@ -53,7 +54,36 @@ class Lightbox {
         document.querySelector('.closeLightbox').addEventListener('click', () => {
             this.close()
         })
-    }
+
+    // GESTION DES TOUCHES DU CLAVIER
+
+        window.addEventListener('keydown', (e) => {
+        const keyCode = e.keyCode ? e.keyCode : e.which
+        
+        if (keyCode === 39) {
+            next()
+        } else if (keyCode === 37) {
+            previous()
+        }
+    })
+        
+        // $carouselPauseBtn.on('click', function() {
+        // clearInterval(carouselInterval)
+        // })
+        window.addEventListener('keydown', (e) => {
+        const keyCode = e.keyCode ? e.keyCode : e.which
+        
+        if (keyCode === 39) {
+            next()
+        } else if (keyCode === 37) {
+            previous()
+        }
+    })
+        
+        // $carouselPauseBtn.on('click', function() {
+        // clearInterval(carouselInterval)
+        // })
+            }
     // POUR OBTENIR L'ID DE
    
     getElementById(id) {
@@ -69,6 +99,7 @@ display() {
 
         const imageCarrousel = `${this._currentElement.title}`
         console.log(imageCarrousel)
+
 
         
         if (this._currentElement.image) { 
@@ -111,7 +142,6 @@ display() {
             document.querySelector('.carrouselImage').innerHTML
             document.querySelector('.lightbox').classList.add('show')           
         }
-
 
     }
   

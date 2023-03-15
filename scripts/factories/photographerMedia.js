@@ -15,18 +15,27 @@ function infoDisplay(data) {
         h2.setAttribute('tabindex', '0')
         photographerProfile.appendChild(h2)
 
+        // CREATION DIV CONTENANT LES 2 PARAGRAPHES
+        const divParagrah = document.createElement('div')
+        divParagrah.setAttribute('tabindex', '0')
+
         // CREATION DES 2 PARAGRAPHES
         const paragraphOne = document.createElement('p')   
         paragraphOne.classList.add('paragraphOne')          
-        paragraphOne.setAttribute('tabindex', '0')          
+        // paragraphOne.setAttribute('tabindex', '0')          
         paragraphOne.textContent = `${city}, ${country}`    
 
         const paragraphTwo = document.createElement('p')    
         paragraphTwo.classList.add('paragraphTwo')          
-        paragraphTwo.textContent = tagline;                 
+        paragraphTwo.textContent = tagline;     
+        
+        divParagrah.appendChild(paragraphOne)
+        divParagrah.appendChild(paragraphTwo)
 
-        photographerProfile.appendChild(paragraphOne)
-        photographerProfile.appendChild(paragraphTwo)
+        // photographerProfile.appendChild(paragraphOne)
+        // photographerProfile.appendChild(paragraphTwo)
+
+        photographerProfile.appendChild(divParagrah)
 
         // AJOUT DE LA DIV H2 & PARAGERAPHES A LA DIV PHOTOGRAPHER-PROFILE
         section.appendChild(photographerProfile)
