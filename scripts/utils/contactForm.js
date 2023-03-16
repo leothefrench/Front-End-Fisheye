@@ -172,7 +172,7 @@ const main = document.getElementById('main')
 // console.log(main)
 
 const modal = document.querySelector('.formulaireBloc')
-const modalTitle = document.getElementById('modalTitle')
+// const modalTitle = document.getElementById('modalTitle')
 const modalCloseBtn = document.querySelector('.modal-close-btn')
 
 
@@ -211,6 +211,7 @@ window.addEventListener('keydown', e => {
        closeModal()
    }
 })
+
 
 /* CHECK MODAL */
 
@@ -322,12 +323,12 @@ document.querySelector('.modal').addEventListener('submit', (e) => {
         alert('Votre réservationé été reçue.')    // CONFIRMATION APRES SOUMISSION DU FORMULAIRE
 
 // LOGGING DES DONNEES ENTREES PAR L'UTILISATEUR
-        let formData = document.querySelector('.formulaireDeContact') // CIBLAGE FORMULAIRE
+        // let formData = document.querySelector('.formulaireDeContact') // CIBLAGE FORMULAIRE
 
-    let inputFirstNameValue = null;
-    let inputLastNameValue = null;
-    let inputEmailValue = null;
-    let inputMsgValue = null;
+    // let inputFirstNameValue = null;
+    // let inputLastNameValue = null;
+    // let inputEmailValue = null;
+    // let inputMsgValue = null;
     
     console.log(inputFirstName.value,inputLastName.value, inputEmail.value, inputMsg.value)
 

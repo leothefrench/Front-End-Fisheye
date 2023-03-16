@@ -11,6 +11,7 @@ class Lightbox {
     show(id) {
         this._currentElement = this.getElementById(id);
         console.log(this._currentElement)
+        console.log(this._currentElement.id)
         this.display();
         console.log(id); // OK RETOURNE BIEN L'ID DE L'IMAGE QUI A RECU LE CLICK 
     }
@@ -29,6 +30,7 @@ class Lightbox {
         this.display();
     }
     // POUR AFFICHER L'IMAGE PRECEDENTE
+
     previous() {
         let index = this._listElement.findIndex(element => element.id == this._currentElement.id)
 
@@ -58,7 +60,7 @@ class Lightbox {
     // GESTION DES TOUCHES DU CLAVIER
 
         window.addEventListener('keydown', (e) => {
-        const keyCode = e.keyCode ? e.keyCode : e.which
+        const keyCode = e.keyCode ? e.keyCode : e.which // keyCode est déprécié trouver son 'rempelaçant'
         
         if (keyCode === 39) {
             next()
@@ -93,14 +95,13 @@ class Lightbox {
     }
 
 display() {
+        console.log(this._currentElement.image)
         const image = `assets/photographers/${this._currentElement.image}`
         
         const videoPhoto = `assets/photographers/${this._currentElement.video}`
 
         const imageCarrousel = `${this._currentElement.title}`
         console.log(imageCarrousel)
-
-
         
         if (this._currentElement.image) { 
             const img = document.createElement('img')

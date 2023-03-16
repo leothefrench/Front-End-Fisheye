@@ -2,12 +2,12 @@
 function lightbox(data) {
     // console.log(data) // RETOURNE BIEN LES DATAS DU PHOTOGRAPHE ET SES MEDIAS
 
-    const {id, photographerId, title, image, video, likes, date, price}  = data
-    const images = `assets/photographers/${image}`;
+    // const {image, video} = data
+    // const images = `assets/photographers/${image}`;
 
     // console.log(images)
 
-    const videoSource = `assets/photographers/${video}`;
+    // const videoSource = `assets/photographers/${video}`;
     // console.log(videoSource)
 
     // CREATION DU MODELE DE LA GALERIE DES DIAPOSITIVES APRES LE CLIC SUR UNE DES IMAGES OU PHOTOS
@@ -15,7 +15,7 @@ function lightbox(data) {
     // CREATION DE LA DIV GLOBALE QUI VA CONTENIR MES 3 DIV (BOUTON LEFT & IMAGES 1 BOUTON RIGHT)
     const divContent = document.createElement('div')
     divContent.classList.add('content')
-//     divContent.setAttribute('tabindex', '0')
+    divContent.setAttribute('tabindex', '0')
     divContent.setAttribute('aria-label', 'image closeup view')
   
             // DIV LEFT FOR LEFT BUTTON
@@ -44,43 +44,44 @@ function lightbox(data) {
         const linkImgCarrousel =  document.createElement('a')
         const linkImgCarrou = '#'
         linkImgCarrousel.setAttribute('href', linkImgCarrou)   
-        linkImgCarrousel.setAttribute('tabindex', '0')   
+        // linkImgCarrousel.setAttribute('tabindex', '0')   
 
         // console.log(image)
 
       //CREATION DE L'IMAGE OU DE LA VIDEO QUI SERA CLIQUABLE POUR LANCER LA LIGHTBOX
-    if(image !== undefined) {
-            const imageCenter = document.createElement('img')
-            imageCenter.classList.add('photoOuVideo')
-            imageCenter.setAttribute('src', images)
-            imageCenter.setAttribute('alt', 'why-not')
+    // if(image !== undefined) {
+    //         const imageCenter = document.createElement('img')
+    //         imageCenter.classList.add('photoOuVideo')
+    //         imageCenter.setAttribute('src', images)
+    //         imageCenter.setAttribute('alt', 'why-not')
 
-            // const titleImage = document.createElement('h3') 
-            // titleImage.classList.add('titleImage')
-            // titleImage.textContent= `${title}`
-            // // imageCenter.setAttribute('src', videoSource)
-            // linkImgCarrousel.appendChild(imageCenter)
-            // linkImgCarrousel.appendChild(titleImage)
-            carrouselImage.appendChild(linkImgCarrousel) 
+    //         // const titleImage = document.createElement('h3') 
+    //         // titleImage.classList.add('titleImage')
+    //         // titleImage.textContent= `${title}`
+    //         // // imageCenter.setAttribute('src', videoSource)
+    //         // linkImgCarrousel.appendChild(imageCenter)
+    //         // linkImgCarrousel.appendChild(titleImage)
+    //         carrouselImage.appendChild(linkImgCarrousel) 
 
-    } else { 
-            const videoPhoto = document.createElement('video')
-            videoPhoto.classList.add('photoOuVideo')
-            videoPhoto.setAttribute('src', videoSource)
-            videoPhoto.setAttribute('type', 'video/mp4')
-            videoPhoto.style.width = '400px'
-            videoPhoto.style.height = '301px'
+    // } else { 
+    //         const videoPhoto = document.createElement('video')
+    //         videoPhoto.classList.add('photoOuVideo')
+    //         videoPhoto.setAttribute('src', videoSource)
+    //         videoPhoto.setAttribute('type', 'video/mp4')
+    //         // videoPhoto.setAttribute('object-fit', 'cover')
+    //         // videoPhoto.style.width = '400px'
+    //         // videoPhoto.style.height = '301px'
 
-            // const titleImage = document.createElement('h3')
-            // titleImage.classList.add('titleImage')
-            // titleImage.textContent = `${title}`
+    //         // const titleImage = document.createElement('h3')
+    //         // titleImage.classList.add('titleImage')
+    //         // titleImage.textContent = `${title}`
 
-            // linkImgCarrousel.appendChild(videoPhoto)
-            // linkImgCarrousel.appendChild(titleImage)
+    //         // linkImgCarrousel.appendChild(videoPhoto)
+    //         // linkImgCarrousel.appendChild(titleImage)
 
-            carrouselImage.appendChild(linkImgCarrousel) // AJOUT DU LIEN LINKIMGCARROUSEL A LA DIV CARROUSEL IMAGE         
-    }
-
+    //         // carrouselImage.appendChild(linkImgCarrousel) // AJOUT DU LIEN LINKIMGCARROUSEL A LA DIV CARROUSEL IMAGE         
+    // }
+ carrouselImage.appendChild(linkImgCarrousel) // AJOUT DU LIEN LINKIMGCARROUSEL A LA DIV CARROUSEL IMAGE  
             divContent.appendChild(carrouselImage) // AJOUT DIV CONTENANT L'IMAGE & LE TITRE H3
 
             // DIV FOR RIGHT BUTTON

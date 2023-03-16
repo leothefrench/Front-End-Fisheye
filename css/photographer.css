@@ -156,6 +156,13 @@ form input {
     margin: 0 auto;
 }
 
+/* .border {
+    border: 3px solid green;
+}
+.echec {
+    border: 3px solid red;
+} */
+
 .message-error {
     display: none;
 }
@@ -314,6 +321,11 @@ font-family: 'DM Sans';
     width: fit-content;
 }
 
+.photoOuVideo {
+    object-fit: cover;
+    border-radius: 5px;
+}
+
 /* PARAGRAPH NBRE LIKES */
 .paragraph-icon {
     font-family: 'DM Sans';
@@ -388,7 +400,6 @@ font-family: 'DM Sans';
 
 .content {
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     width: 85%;
     height: 85%;
@@ -414,6 +425,7 @@ font-family: 'DM Sans';
 
 .carrousel video {
     max-width: 100%;
+
         height: 92%;
         object-fit: cover;
 }
@@ -439,6 +451,8 @@ font-family: 'DM Sans';
 
 .closeLightbox {
     font-size: 2em;
+    color: #911C1C;
+
 }
 
 .divRightButton {

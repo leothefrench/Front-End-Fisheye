@@ -56,6 +56,6 @@ async function init() {
         lightbox(photographer.media)
         formulaire(photographer.photographers)
 
-};
+}
     
 init();
