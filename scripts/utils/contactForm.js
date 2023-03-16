@@ -1,9 +1,7 @@
 
 function formulaire(data) {
 
-    // console.log(data)
     let name = data[0].name;
-    // console.log(name)
 
     const divFormulaireBloc = document.querySelector('.formulaireBloc')
     divFormulaireBloc.setAttribute('tabindex', '0')
@@ -12,8 +10,6 @@ function formulaire(data) {
     divFormulaireBloc.setAttribute('aria-hidden', 'true')
     divFormulaireBloc.setAttribute('aria-describedby', 'modalTitle')
     divFormulaireBloc.setAttribute('role', 'dialog')
-
-    // console.log(divFormulaireBloc) // OKAY
 
     // DIV CONTENANT LA DIV HEADER & DIV FORMULAIRE
     const divHeaderFormulaire = document.createElement('div')
@@ -48,7 +44,6 @@ function formulaire(data) {
 
     const formulaire = document.createElement('form')
     formulaire.classList.add('formulaireDeContact')
-    // divFormulaire.appendChild(formulaire)
 
     // LABEL PRENOM
     const labelPrenom = document.createElement('label')
@@ -130,7 +125,7 @@ function formulaire(data) {
     spanMessage.classList.add("message-error")
     formulaire.appendChild(spanMessage)
 
-    // BOUTON CONTACT DANS LE FORMULAIRE
+    // BOUTON SUBMIT DANS LE FORMULAIRE
     const boutonContact = document.createElement('button')
     boutonContact.classList.add('contact_button')
     boutonContact.setAttribute('type', 'submit')
@@ -141,13 +136,10 @@ function formulaire(data) {
     divFormulaire.appendChild(formulaire)
     divFormulaireBloc.appendChild(divFormulaire)
 
-
     // BOUTON POUR CLOSE MODAL
     const buttonCloseModal = document.createElement('button')
     buttonCloseModal.classList.add('modal-close-btn')
     buttonCloseModal.setAttribute('onclick', 'closeModal()')
-
-   //  console.log(buttonCloseModal)
 
     const imgCloseButton = document.createElement('img')
     imgCloseButton.setAttribute('src', 'assets/icons/close.svg')
@@ -156,28 +148,19 @@ function formulaire(data) {
     imgCloseButton.setAttribute('aria-label', 'Boutton de fermeture du formulaire de contact')
     buttonCloseModal.appendChild(imgCloseButton)
 
-
     divFormulaire.appendChild(formulaire)
     divFormulaire.appendChild(buttonCloseModal)
 
-
     divFormulaireBloc.appendChild(divFormulaire)
-// }
 
 // DECLARATION DES VARIABLES POUR LE CHECKING
 const body = document.querySelector('body')
 const openModalBtn = document.querySelector('.open-modal-btn') // OPEN BUTTON MODAL
 const main = document.getElementById('main')
 
-// console.log(main)
-
 const modal = document.querySelector('.formulaireBloc')
 // const modalTitle = document.getElementById('modalTitle')
 const modalCloseBtn = document.querySelector('.modal-close-btn')
-
-
-// console.log(modalCloseBtn)
-
 
 // EVENT LISTENER FOR OPENING THE MODAL
 openModalBtn.addEventListener('click', displayModal);
@@ -212,7 +195,6 @@ window.addEventListener('keydown', e => {
    }
 })
 
-
 /* CHECK MODAL */
 
 function verificationModal() {
@@ -221,9 +203,6 @@ function verificationModal() {
     const inputEmail = document.querySelector('#email')
     const inputMsg = document.querySelector('#message')
     const errorMessage = document.querySelectorAll('.message-error')
-
-    // console.log(errorMessage) // OKAY NODE LIST
-
 
 // DECLARATION VARIABLE QUI CONTIENDRONT LE BOOLEEN DE CHECKING
 let verificationDeFirst
@@ -320,27 +299,15 @@ document.querySelector('.modal').addEventListener('submit', (e) => {
     /* SI TOUTES LES VERIFICATIONS A TRUE ON FAIT CE QUI SUIT */
     if(verificationDeFirst === true && verificationDeLast === true && verificationEmail === true && verificationMsg === true) {
 
-        alert('Votre réservationé été reçue.')    // CONFIRMATION APRES SOUMISSION DU FORMULAIRE
+        alert('Votre réservationé été reçue.')    // CONFIRMATION AVEC ALERT BOX APRES SOUMISSION DU FORMULAIRE
 
-// LOGGING DES DONNEES ENTREES PAR L'UTILISATEUR
-        // let formData = document.querySelector('.formulaireDeContact') // CIBLAGE FORMULAIRE
-
-    // let inputFirstNameValue = null;
-    // let inputLastNameValue = null;
-    // let inputEmailValue = null;
-    // let inputMsgValue = null;
-    
+    // LOGGING DES DONNEES ENTREES PAR L'UTILISATEUR
     console.log(inputFirstName.value,inputLastName.value, inputEmail.value, inputMsg.value)
 
     } else {
-
     alert("Merci de bien remplir votre inscription"); // Alert box pour informer l'utilisateur à remplir correctement le formulaire
     e.preventDefault()  // Stop le comportement par défaut de l'envoi du formulaire
     }    
-    
-    // lOG INFOS ENTREES PAR UTILISATEUR FAIRE AU LIEU D'UNE ALERT
-
-
     })
 }
     verificationModal()

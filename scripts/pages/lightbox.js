@@ -1,19 +1,14 @@
 
 function lightbox(data) {
-    // console.log(data) // RETOURNE BIEN LES DATAS DU PHOTOGRAPHE ET SES MEDIAS
+ 
+const divContent = document.createElement('div')
 
-    // const {image, video} = data
-    // const images = `assets/photographers/${image}`;
 
-    // console.log(images)
+    let checkContent = document.querySelector('.content')
+    if(!checkContent) {
+        // console.log('OKAY')
 
-    // const videoSource = `assets/photographers/${video}`;
-    // console.log(videoSource)
-
-    // CREATION DU MODELE DE LA GALERIE DES DIAPOSITIVES APRES LE CLIC SUR UNE DES IMAGES OU PHOTOS
-
-    // CREATION DE LA DIV GLOBALE QUI VA CONTENIR MES 3 DIV (BOUTON LEFT & IMAGES 1 BOUTON RIGHT)
-    const divContent = document.createElement('div')
+    // const divContent = document.createElement('div')
     divContent.classList.add('content')
     divContent.setAttribute('tabindex', '0')
     divContent.setAttribute('aria-label', 'image closeup view')
@@ -44,50 +39,14 @@ function lightbox(data) {
         const linkImgCarrousel =  document.createElement('a')
         const linkImgCarrou = '#'
         linkImgCarrousel.setAttribute('href', linkImgCarrou)   
-        // linkImgCarrousel.setAttribute('tabindex', '0')   
 
-        // console.log(image)
-
-      //CREATION DE L'IMAGE OU DE LA VIDEO QUI SERA CLIQUABLE POUR LANCER LA LIGHTBOX
-    // if(image !== undefined) {
-    //         const imageCenter = document.createElement('img')
-    //         imageCenter.classList.add('photoOuVideo')
-    //         imageCenter.setAttribute('src', images)
-    //         imageCenter.setAttribute('alt', 'why-not')
-
-    //         // const titleImage = document.createElement('h3') 
-    //         // titleImage.classList.add('titleImage')
-    //         // titleImage.textContent= `${title}`
-    //         // // imageCenter.setAttribute('src', videoSource)
-    //         // linkImgCarrousel.appendChild(imageCenter)
-    //         // linkImgCarrousel.appendChild(titleImage)
-    //         carrouselImage.appendChild(linkImgCarrousel) 
-
-    // } else { 
-    //         const videoPhoto = document.createElement('video')
-    //         videoPhoto.classList.add('photoOuVideo')
-    //         videoPhoto.setAttribute('src', videoSource)
-    //         videoPhoto.setAttribute('type', 'video/mp4')
-    //         // videoPhoto.setAttribute('object-fit', 'cover')
-    //         // videoPhoto.style.width = '400px'
-    //         // videoPhoto.style.height = '301px'
-
-    //         // const titleImage = document.createElement('h3')
-    //         // titleImage.classList.add('titleImage')
-    //         // titleImage.textContent = `${title}`
-
-    //         // linkImgCarrousel.appendChild(videoPhoto)
-    //         // linkImgCarrousel.appendChild(titleImage)
-
-    //         // carrouselImage.appendChild(linkImgCarrousel) // AJOUT DU LIEN LINKIMGCARROUSEL A LA DIV CARROUSEL IMAGE         
-    // }
+  
  carrouselImage.appendChild(linkImgCarrousel) // AJOUT DU LIEN LINKIMGCARROUSEL A LA DIV CARROUSEL IMAGE  
             divContent.appendChild(carrouselImage) // AJOUT DIV CONTENANT L'IMAGE & LE TITRE H3
 
             // DIV FOR RIGHT BUTTON
             let divRightButton =  document.createElement('div')
             divRightButton.classList.add('divRightButton')
-        //     divRightButton.setAttribute('tabindex', '0')
 
             const divCloseButton = document.createElement('div')
             divCloseButton.classList.add('divCloseButton')
@@ -114,6 +73,7 @@ function lightbox(data) {
         
             lightbox.appendChild(divContent)
 
+    }
     // LIGHTBOX
     let myBox = new Lightbox(data);
     // console.log(myBox) // PASSE BIEN EN PARAMETRE 2 UN ARRAYS DES MEDIAS

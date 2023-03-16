@@ -10,16 +10,14 @@ class Lightbox {
     //POUR AFFICHER LA MODALE LORS DU CLIC UTILISATEUR 
     show(id) {
         this._currentElement = this.getElementById(id);
-        console.log(this._currentElement)
-        console.log(this._currentElement.id)
+        // console.log(this._currentElement)
+        // console.log(this._currentElement.id)
         this.display();
-        console.log(id); // OK RETOURNE BIEN L'ID DE L'IMAGE QUI A RECU LE CLICK 
+        // console.log(id); // OK RETOURNE BIEN L'ID DE L'IMAGE QUI A RECU LE CLICK 
     }
     // POUR AFFICHER L'IMAGE SUIVANTE
     next() {
         let index = this._listElement.findIndex(element => element.id == this._currentElement.id)
-
-// console.log(index)
 
         if( index == this._listElement.length - 1) {
             this._currentElement = this._listElement[0] // POUR AVOIR UN RETOUR AU PREMIER INDEX UNE FOIS EN FIN DE CARROUSEL
@@ -33,11 +31,13 @@ class Lightbox {
 
     previous() {
         let index = this._listElement.findIndex(element => element.id == this._currentElement.id)
-
-        if( index == this._listElement.length -1) {
-            this._currentElement = this._listElement[0];
+        // console.log(index)
+        if( index == 0) {
+            this._currentElement = this._listElement[this._listElement.length - 1];
+            // console.log(this._currentElement)
         } else {
             this._currentElement = this._listElement[index - 1];
+        //  console.log(this._currentElement)
         }
 
         this.display();
@@ -57,58 +57,29 @@ class Lightbox {
             this.close()
         })
 
-    // GESTION DES TOUCHES DU CLAVIER
-
-        window.addEventListener('keydown', (e) => {
-        const keyCode = e.keyCode ? e.keyCode : e.which // keyCode est déprécié trouver son 'rempelaçant'
-        
-        if (keyCode === 39) {
-            next()
-        } else if (keyCode === 37) {
-            previous()
-        }
-    })
-        
-        // $carouselPauseBtn.on('click', function() {
-        // clearInterval(carouselInterval)
-        // })
-        window.addEventListener('keydown', (e) => {
-        const keyCode = e.keyCode ? e.keyCode : e.which
-        
-        if (keyCode === 39) {
-            next()
-        } else if (keyCode === 37) {
-            previous()
-        }
-    })
-        
-        // $carouselPauseBtn.on('click', function() {
-        // clearInterval(carouselInterval)
-        // })
-            }
+       }
     // POUR OBTENIR L'ID DE
    
     getElementById(id) {
-          console.log(this._listElement)
+        //   console.log(this._listElement)
          let idInListElement = this._listElement.find(element => element.id == id);
         return idInListElement;
     }
 
 display() {
-        console.log(this._currentElement.image)
+        // console.log(this._currentElement.image)
         const image = `assets/photographers/${this._currentElement.image}`
         
         const videoPhoto = `assets/photographers/${this._currentElement.video}`
 
         const imageCarrousel = `${this._currentElement.title}`
-        console.log(imageCarrousel)
+        // console.log(imageCarrousel)
         
         if (this._currentElement.image) { 
             const img = document.createElement('img')
             img.setAttribute('src', image)
             img.setAttribute('tabindex', '0')
             document.querySelector('.carrouselImage a').innerHTML = ''
-            // document.querySelector('.carrouselImage a').append(img)
 
             const titleImage = document.createElement('h3')
             titleImage.classList.add('titleImage')
@@ -121,7 +92,6 @@ display() {
             document.querySelector('.carrouselImage').innerHTML
             document.querySelector('.lightbox').classList.add('show') // OKAY  LES IMAGES S'AFFICHENT
             
-            // JE DOIS RAJOUTER AUSSI LE TITRE DES IMAGES
 
         } else {
             const videoElement = document.createElement('video') // LA VIDEO NE S'AFFICHENT PAS

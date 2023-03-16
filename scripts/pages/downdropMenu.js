@@ -123,7 +123,7 @@ const selected = document.querySelector('.selected')
     })
 
     const globalPhotos = document.querySelector('.globalPhotos')
-
+    lightbox(data.media)
     // CREATION DE LA FONCTION POUR LA GENERATION DE LA PAGE PHOTOGRAPHE APRES FILTRAGE 
     document.querySelectorAll('.filter-option').forEach((el) => {
       el.addEventListener('click', () => {
