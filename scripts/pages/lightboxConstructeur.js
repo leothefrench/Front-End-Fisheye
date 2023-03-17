@@ -31,7 +31,7 @@ class Lightbox {
 
     previous() {
         let index = this._listElement.findIndex(element => element.id == this._currentElement.id)
-        // console.log(index)
+        console.log(this._currentElement.id)
         if( index == 0) {
             this._currentElement = this._listElement[this._listElement.length - 1];
             // console.log(this._currentElement)
