@@ -129,9 +129,6 @@ const selected = document.querySelector('.selected')
       el.addEventListener('click', () => {
         const id = el.id;
 
-        // console.log(el)
-        // console.log(id)
-
         switch (id) {
           case 'date':
             
@@ -149,8 +146,6 @@ const selected = document.querySelector('.selected')
             });
 
             comptageLike() // REHYDRATATION DES ADD EVENT LISTENER
-
-
             lightbox(data.media) 
 
             break
@@ -167,8 +162,8 @@ const selected = document.querySelector('.selected')
                 globalPhotos.appendChild(userCardDOM);
             });
 
-           comptageLike() // REHYDRATATION DES ADD EVENT LISTENER
-               lightbox(data.media) 
+            comptageLike() // REHYDRATATION DES ADD EVENT LISTENER
+            lightbox(data.media) 
             break
           case 'titre':
 
@@ -183,8 +178,8 @@ const selected = document.querySelector('.selected')
                 globalPhotos.appendChild(userCardDOM);
             });
 
-           comptageLike() // REHYDRATATION DES ADD EVENT LISTENER
-      lightbox(data.media) 
+            comptageLike() // REHYDRATATION DES ADD EVENT LISTENER
+            lightbox(data.media) 
             break
             
           default:

@@ -3,7 +3,7 @@ function formulaire(data) {
 
     let name = data[0].name;
 
-    const divBackFormulaireBloc = document.createElement('div')
+    // const divBackFormulaireBloc = document.createElement('section')
 
     const divFormulaireBloc = document.querySelector('.formulaireBloc')
     divFormulaireBloc.setAttribute('tabindex', '0')

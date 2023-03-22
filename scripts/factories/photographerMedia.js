@@ -21,8 +21,7 @@ function infoDisplay(data) {
 
         // CREATION DES 2 PARAGRAPHES
         const paragraphOne = document.createElement('p')   
-        paragraphOne.classList.add('paragraphOne')          
-        // paragraphOne.setAttribute('tabindex', '0')          
+        paragraphOne.classList.add('paragraphOne')           
         paragraphOne.textContent = `${city}, ${country}`    
 
         const paragraphTwo = document.createElement('p')    
@@ -31,9 +30,6 @@ function infoDisplay(data) {
         
         divParagrah.appendChild(paragraphOne)
         divParagrah.appendChild(paragraphTwo)
-
-        // photographerProfile.appendChild(paragraphOne)
-        // photographerProfile.appendChild(paragraphTwo)
 
         photographerProfile.appendChild(divParagrah)
 
@@ -52,13 +48,10 @@ function infoDisplay(data) {
         img.style.height = "200px"
         img.style.borderRadius = "50%"
 
-
         section.appendChild(img)
-        // section.appendChild(videoMP4)
 
-         return (section);
+        return (section);
     }
-
     return { name, picture, id, city, country, tagline, price, getUserCardDOM }
 }
 
@@ -131,8 +124,8 @@ function factoryMedia(data) {
         const paragraphIcon = document.createElement('h4')       // MY COUNTER OF LIKES
         paragraphIcon.classList.add('paragraph-icon')
         paragraphIcon.setAttribute('data-set', id)
-        // paragraphIcon.setAttribute('tabindex', '0')
-        paragraphIcon.setAttribute('aria-label', 'Nombre de likes')
+        paragraphIcon.setAttribute('tabindex', '0')
+        paragraphIcon.setAttribute('aria-label', `Nombre de likes`)
         paragraphIcon.textContent = `${likes}`;
 
         // CREATION ICON BUTTON
@@ -142,7 +135,7 @@ function factoryMedia(data) {
         iconButton.setAttribute('data-set', id) // AJOUT ID SUR BOUTON
         iconButton.setAttribute('tabindex', '0')
         iconButton.setAttribute('role', 'button')
-        iconButton.setAttribute('aria-label', 'Liker cette photo')
+        iconButton.setAttribute('aria-label', 'Liké cette photo')
 
         const spanIcon = document.createElement('span')
         iconButton.innerHTML = '<i class="fa-solid fa-heart"></i>'

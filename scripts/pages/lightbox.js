@@ -3,17 +3,14 @@ function lightbox(data) {
  
 const divContent = document.createElement('div')
 
-
     let checkContent = document.querySelector('.content')
     if(!checkContent) {
-        // console.log('OKAY')
 
-    // const divContent = document.createElement('div')
     divContent.classList.add('content')
     divContent.setAttribute('tabindex', '0')
     divContent.setAttribute('aria-label', 'image closeup view')
   
-            // DIV LEFT FOR LEFT BUTTON
+    // DIV LEFT FOR LEFT BUTTON
             let divLeftButton =  document.createElement('div')
             divLeftButton.classList.add('divLeftButton')
             
@@ -40,8 +37,7 @@ const divContent = document.createElement('div')
         const linkImgCarrou = '#'
         linkImgCarrousel.setAttribute('href', linkImgCarrou)   
 
-  
- carrouselImage.appendChild(linkImgCarrousel) // AJOUT DU LIEN LINKIMGCARROUSEL A LA DIV CARROUSEL IMAGE  
+            carrouselImage.appendChild(linkImgCarrousel) // AJOUT DU LIEN LINKIMGCARROUSEL A LA DIV CARROUSEL IMAGE  
             divContent.appendChild(carrouselImage) // AJOUT DIV CONTENANT L'IMAGE & LE TITRE H3
 
             // DIV FOR RIGHT BUTTON
@@ -76,14 +72,10 @@ const divContent = document.createElement('div')
     }
     // LIGHTBOX
     let myBox = new Lightbox(data);
-    // console.log(myBox) // PASSE BIEN EN PARAMETRE 2 UN ARRAYS DES MEDIAS
 
     document.querySelectorAll('.div-lien').forEach((el) => { 
-        el.addEventListener('click', (e) => {
-            // console.log(e.currentTarget.dataset.id)
-              
-            myBox.show(e.currentTarget.dataset.id);   
-                     
+        el.addEventListener('click', (e) => {            
+            myBox.show(e.currentTarget.dataset.id);                   
         })
     })
     return divContent;

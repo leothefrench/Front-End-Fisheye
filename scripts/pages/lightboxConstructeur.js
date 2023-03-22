@@ -1,6 +1,5 @@
 class Lightbox {
     constructor(listElement) {
-        
         this._currentElement = null;
         this._listElement = listElement;
 
@@ -10,10 +9,7 @@ class Lightbox {
     //POUR AFFICHER LA MODALE LORS DU CLIC UTILISATEUR 
     show(id) {
         this._currentElement = this.getElementById(id);
-        // console.log(this._currentElement)
-        // console.log(this._currentElement.id)
         this.display();
-        // console.log(id); // OK RETOURNE BIEN L'ID DE L'IMAGE QUI A RECU LE CLICK 
     }
     // POUR AFFICHER L'IMAGE SUIVANTE
     next() {
@@ -24,25 +20,18 @@ class Lightbox {
         } else {
             this._currentElement = this._listElement[index + 1]
         }
-
         this.display();
     }
     // POUR AFFICHER L'IMAGE PRECEDENTE
-
     previous() {
         let index = this._listElement.findIndex(element => element.id == this._currentElement.id)
-        console.log(this._currentElement.id)
         if( index == 0) {
             this._currentElement = this._listElement[this._listElement.length - 1];
-            // console.log(this._currentElement)
         } else {
             this._currentElement = this._listElement[index - 1];
-        //  console.log(this._currentElement)
         }
-
         this.display();
     }
-
     // POUR LA GESTION DES EVENEMENTS CLICKS
     manageEvent() {
         document.querySelector('.next').addEventListener('click', () => {
@@ -59,21 +48,17 @@ class Lightbox {
 
        }
     // POUR OBTENIR L'ID DE
-   
     getElementById(id) {
-        //   console.log(this._listElement)
-         let idInListElement = this._listElement.find(element => element.id == id);
+        let idInListElement = this._listElement.find(element => element.id == id);
         return idInListElement;
     }
 
-display() {
-        // console.log(this._currentElement.image)
-        const image = `assets/photographers/${this._currentElement.image}`
-        
+    display() {
+
+        const image = `assets/photographers/${this._currentElement.image}`       
         const videoPhoto = `assets/photographers/${this._currentElement.video}`
 
         const imageCarrousel = `${this._currentElement.title}`
-        // console.log(imageCarrousel)
         
         if (this._currentElement.image) { 
             const img = document.createElement('img')
@@ -88,13 +73,13 @@ display() {
 
             document.querySelector('.carrouselImage a').append(img)
             document.querySelector('.carrouselImage a').append(titleImage)
-
             document.querySelector('.carrouselImage').innerHTML
-            document.querySelector('.lightbox').classList.add('show') // OKAY  LES IMAGES S'AFFICHENT
+
+            document.querySelector('.lightbox').classList.add('show')
             
 
         } else {
-            const videoElement = document.createElement('video') // LA VIDEO NE S'AFFICHENT PAS
+            const videoElement = document.createElement('video')
             videoElement.setAttribute('src', videoPhoto)
             videoElement.setAttribute('type', 'video/mp4')
             videoElement.setAttribute('height', '92%')
@@ -109,13 +94,12 @@ display() {
 
             document.querySelector('.carrouselImage a').append(videoElement)
             document.querySelector('.carrouselImage a').append(titleImage)
-
             document.querySelector('.carrouselImage').innerHTML
+
             document.querySelector('.lightbox').classList.add('show')           
         }
 
     }
-  
     close() {
         document.querySelector('.lightbox').classList.remove('show')    
     }
