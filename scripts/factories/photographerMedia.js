@@ -121,11 +121,11 @@ function factoryMedia(data) {
         const divLikes = document.createElement('div')
 
         // PARAGRAPHE NBRE LIKES
-        const paragraphIcon = document.createElement('h4')       // MY COUNTER OF LIKES
+        const paragraphIcon = document.createElement('p')       // MY COUNTER OF LIKES
         paragraphIcon.classList.add('paragraph-icon')
         paragraphIcon.setAttribute('data-set', id)
         paragraphIcon.setAttribute('tabindex', '0')
-        paragraphIcon.setAttribute('aria-label', `Nombre de likes`)
+        paragraphIcon.setAttribute('aria-label', `${likes}`)
         paragraphIcon.textContent = `${likes}`;
 
         // CREATION ICON BUTTON
@@ -135,7 +135,7 @@ function factoryMedia(data) {
         iconButton.setAttribute('data-set', id) // AJOUT ID SUR BOUTON
         iconButton.setAttribute('tabindex', '0')
         iconButton.setAttribute('role', 'button')
-        iconButton.setAttribute('aria-label', 'Liké cette photo')
+        iconButton.setAttribute('aria-label', 'Aimer cette photo')
 
         const spanIcon = document.createElement('span')
         iconButton.innerHTML = '<i class="fa-solid fa-heart"></i>'

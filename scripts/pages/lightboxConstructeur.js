@@ -69,6 +69,7 @@ class Lightbox {
             const titleImage = document.createElement('h3')
             titleImage.classList.add('titleImage')
             titleImage.setAttribute('tabindex', '0')
+
             titleImage.textContent= `${imageCarrousel}`
 
             document.querySelector('.carrouselImage a').append(img)

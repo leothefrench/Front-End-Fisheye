@@ -17,6 +17,7 @@ const divContent = document.createElement('div')
             let leftButton = document.createElement('button')
             leftButton.classList.add('previous')
             leftButton.setAttribute('tabindex', '0')
+            leftButton.setAttribute('aria-label', 'Image précédente')
             let leftIconSpan = document.createElement('span')
             leftIconSpan.innerHTML = `<i class="fas fa-angle-left"></i>`
             leftButton.appendChild(leftIconSpan)
@@ -29,13 +30,16 @@ const divContent = document.createElement('div')
             // DIV CENTER IMAGE CARROUSEL & TITLE H3
             let carrouselImage = document.createElement('div')
             carrouselImage.classList.add('carrouselImage')
+            // carrouselImage.setAttribute('tabindex', '0')
 
     // FAIRE LA CREATION D'UN LIEN QUI CONTENDRA L'IMAGE - PUIS ON AJOUTE L'IMAGE OU LA VIDEO A CE LIEN
 
         // CREATION DU LIEN QUI CONTIENDRA LA PHOTO CLIQUABLE POUR LANCER LA LIGHTBOX
         const linkImgCarrousel =  document.createElement('a')
         const linkImgCarrou = '#'
-        linkImgCarrousel.setAttribute('href', linkImgCarrou)   
+        linkImgCarrousel.setAttribute('href', linkImgCarrou)  
+        linkImgCarrousel.setAttribute('role', 'button')
+        linkImgCarrousel.setAttribute('aria-describedby', 'Ouvrir le Carousel') 
 
             carrouselImage.appendChild(linkImgCarrousel) // AJOUT DU LIEN LINKIMGCARROUSEL A LA DIV CARROUSEL IMAGE  
             divContent.appendChild(carrouselImage) // AJOUT DIV CONTENANT L'IMAGE & LE TITRE H3
@@ -48,6 +52,7 @@ const divContent = document.createElement('div')
             divCloseButton.classList.add('divCloseButton')
             let btnCloseLightbox = document.createElement('button')
             btnCloseLightbox.setAttribute('tabindex', '0')
+            btnCloseLightbox.setAttribute('aria-label', 'Fermer le Carrousel')
             btnCloseLightbox.classList.add('closeLightbox')
             btnCloseLightbox.textContent = 'x'
             divCloseButton.appendChild(btnCloseLightbox)
@@ -56,6 +61,7 @@ const divContent = document.createElement('div')
             divInterneRightButton.classList.add('divInterneRightButton')
             let rightButton = document.createElement('button')
             rightButton.setAttribute('tabindex', '0')
+            rightButton.setAttribute('aria-label', 'Image suivante')
             rightButton.classList.add('next')
             divInterneRightButton.appendChild(rightButton)
 

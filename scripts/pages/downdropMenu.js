@@ -30,7 +30,7 @@
         const divArrow = document.createElement('div')
         divArrow.classList.add('arrow')
         // divArrow.setAttribute('tabindex', '0')
-        divArrow.innerHTML = '<i class="fa-solid fa-chevron-up"></i>'
+        divArrow.innerHTML = '<i class="fa-solid fa-chevron-down"></i>'
         select.appendChild(divArrow)
 
         // CREATION DE LA DIV CONTENANT LES 3 CHOIX CLIQUABLE DU MENU DEROULANT
