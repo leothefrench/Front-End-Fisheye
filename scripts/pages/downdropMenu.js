@@ -1,84 +1,81 @@
 // CREATION DE LA FONCTION DROPDOWN MENU POUR FILTRAGE DES CHOIX UTILISATEUR
     function dropDownMenu(data) {
-    // console.log(data) 
-        // CREATION SECTION CONTENANT TITRE H3 & DROPDOWN MENU
-        const sectionFilter = document.createElement('section')
-        sectionFilter.classList.add('filter')
-        // CREATION DU TITRE H3
-        const titleTrierPar = document.createElement('h3')
-        titleTrierPar.classList.add('trier-par')
-        titleTrierPar.setAttribute('tabindex', '0')
-        titleTrierPar.textContent = 'Trier par'
-        sectionFilter.appendChild(titleTrierPar)
-        // CREATION DROPDOWN MENU 
-        const divDropdownMenu = document.createElement('div')
-        divDropdownMenu.classList.add('dropdown')
-        divDropdownMenu.setAttribute('tabindex', '0')
-        sectionFilter.appendChild(divDropdownMenu)
 
-        const select = document.createElement('div')
-        select.classList.add('select')
-        select.setAttribute('tabindex', '0')
-        divDropdownMenu.appendChild(select)
+      // CREATION SECTION CONTENANT TITRE H3 & DROPDOWN MENU
+      const sectionFilter = document.createElement('section')
+      sectionFilter.classList.add('filter')
+      // CREATION DU TITRE H3
+      const titleTrierPar = document.createElement('h3')
+      titleTrierPar.classList.add('trier-par')
+      titleTrierPar.setAttribute('tabindex', '0')
+      titleTrierPar.textContent = 'Trier par'
+      sectionFilter.appendChild(titleTrierPar)
+      // CREATION DROPDOWN MENU 
+      const divDropdownMenu = document.createElement('div')
+      divDropdownMenu.classList.add('dropdown')
+      sectionFilter.appendChild(divDropdownMenu)
 
-        const spanSelected = document.createElement('button')
-        spanSelected.classList.add('selected')
-        // spanSelected.setAttribute('tabindex', '0')
-        spanSelected.textContent = 'Popularité'
-        select.appendChild(spanSelected)
+      const select = document.createElement('div')
+      select.classList.add('select')
+      divDropdownMenu.appendChild(select)
 
-        const divArrow = document.createElement('div')
-        divArrow.classList.add('arrow')
-        // divArrow.setAttribute('tabindex', '0')
-        divArrow.innerHTML = '<i class="fa-solid fa-chevron-down"></i>'
-        select.appendChild(divArrow)
+      const spanSelected = document.createElement('button') // Avant bouton
+      spanSelected.classList.add('selected')
+      spanSelected.textContent = 'Popularité'
+      select.appendChild(spanSelected)
 
-        // CREATION DE LA DIV CONTENANT LES 3 CHOIX CLIQUABLE DU MENU DEROULANT
-        const divContainerChoice = document.createElement('div')
-        divContainerChoice.classList.add('filter-options-container')
-        divContainerChoice.setAttribute('role', 'listbox')
-        divContainerChoice.setAttribute('tabindex', '0') // A VERIFIER ENCORE
+      const divArrow = document.createElement('div')
+      divArrow.classList.add('arrow')
+ 
+      divArrow.innerHTML = '<i class="fa-solid fa-chevron-down"></i>'
+      select.appendChild(divArrow)
 
-        // CREATION DES TROIS SPANS TAG POUR LES 3 CHOIX
-        const aFirstChoicePopularite = document.createElement('button')
-        const aSecondChoiceDate = document.createElement('button')
-        const aThirdChoiceTitre = document.createElement('button')
+      // CREATION DE LA DIV CONTENANT LES 3 CHOIX CLIQUABLE DU MENU DEROULANT
+      const divContainerChoice = document.createElement('div')
+      divContainerChoice.classList.add('filter-options-container')
+      divContainerChoice.setAttribute('role', 'listbox')
 
-        //FIRST CHOICE - POPULARITE
-        aFirstChoicePopularite.classList.add('filter-option')
-        aFirstChoicePopularite.classList.add('active')
-        aFirstChoicePopularite.setAttribute('role', 'option')
-        aFirstChoicePopularite.setAttribute('aria-label', 'Trier par popularité')
-        aFirstChoicePopularite.setAttribute('aria-selected', 'true')
-        aFirstChoicePopularite.setAttribute('id', 'popularite')
-        aFirstChoicePopularite.setAttribute('tabindex', '0')
-        aFirstChoicePopularite.textContent = "Popularité"
-        // SECOND CHOICE - DATE
-        aSecondChoiceDate.classList.add('filter-option')
-        aSecondChoiceDate.setAttribute('role', 'option')
-        aSecondChoiceDate.setAttribute('aria-label', 'Trier par date')
-        aSecondChoiceDate.setAttribute('aria-selected', 'false')
-        aSecondChoiceDate.setAttribute('id', 'date')
-        aSecondChoiceDate.setAttribute('tabindex', '0')
-        aSecondChoiceDate.textContent = "Date"
-        // THIRD CHOICE - TITRE
-        aThirdChoiceTitre.classList.add('filter-option')
-        aThirdChoiceTitre.setAttribute('role', 'option')
-        aThirdChoiceTitre.setAttribute('aria-label', 'Trier par titre')
-        aThirdChoiceTitre.setAttribute('aria-selected', 'false')
-        aThirdChoiceTitre.setAttribute('id', 'titre')
-        aThirdChoiceTitre.setAttribute('tabindex', '0')
-        aThirdChoiceTitre.textContent = "Titre"
+      // CREATION DES TROIS SPANS TAG POUR LES 3 CHOIX
+      const aFirstChoicePopularite = document.createElement('button')
+      const aSecondChoiceDate = document.createElement('button')
+      const aThirdChoiceTitre = document.createElement('button')
 
-        // ADD THREE LINKS IN DIV FILTER-SELECT
-        divContainerChoice.appendChild(aFirstChoicePopularite)
-        divContainerChoice.appendChild(aSecondChoiceDate)
-        divContainerChoice.appendChild(aThirdChoiceTitre)
+      //FIRST CHOICE - POPULARITE
+      aFirstChoicePopularite.classList.add('filter-option')
+      aFirstChoicePopularite.classList.add('active')
+      aFirstChoicePopularite.setAttribute('role', 'option')
+      aFirstChoicePopularite.setAttribute('aria-label', 'Trier par popularité')
+      aFirstChoicePopularite.setAttribute('aria-selected', 'true')
+      aFirstChoicePopularite.setAttribute('id', 'popularite')
+      aFirstChoicePopularite.setAttribute('tabindex', '0')
+      aFirstChoicePopularite.textContent = "Popularité"
+      // SECOND CHOICE - DATE
+      aSecondChoiceDate.classList.add('filter-option')
+      aSecondChoiceDate.classList.add('btn-date')
+      aSecondChoiceDate.setAttribute('role', 'option')
+      aSecondChoiceDate.setAttribute('aria-label', 'Trier par date')
+      aSecondChoiceDate.setAttribute('aria-selected', 'false')
+      aSecondChoiceDate.setAttribute('id', 'date')
+      aSecondChoiceDate.setAttribute('tabindex', '0')
+      aSecondChoiceDate.textContent = "Date"
+      // THIRD CHOICE - TITRE
+      aThirdChoiceTitre.classList.add('filter-option')
+      aThirdChoiceTitre.setAttribute('role', 'option')
+      aThirdChoiceTitre.setAttribute('aria-label', 'Trier par titre')
+      aThirdChoiceTitre.setAttribute('aria-selected', 'false')
+      aThirdChoiceTitre.setAttribute('id', 'titre')
+      aThirdChoiceTitre.setAttribute('tabindex', '0')
+      aThirdChoiceTitre.textContent = "Titre"
 
-        divDropdownMenu.appendChild(divContainerChoice)
+      // ADD THREE LINKS IN DIV FILTER-SELECT
+      divContainerChoice.appendChild(aFirstChoicePopularite)
+      divContainerChoice.appendChild(aSecondChoiceDate)
+      divContainerChoice.appendChild(aThirdChoiceTitre)
 
-        const filter = document.querySelector('.filterBloc')
-        filter.appendChild(sectionFilter)
+      divDropdownMenu.appendChild(divContainerChoice)
+
+      const filter = document.querySelector('.filterBloc')
+      filter.appendChild(sectionFilter)
 
 // PARTIE JS POUR LE CLIC SUR lES LIENS DU MENU DROPDOWN
 
@@ -101,15 +98,9 @@ const selected = document.querySelector('.selected')
 
 // ON BOUCLE SUR TOUS LES CHOIX (LES OPTIONS)
     options.forEach(option =>  {
-        // AJOUT EVENEMENT SUR L'OPTION RECEVANT LE CLICK
         option.addEventListener('click', () => {
-       // Changement du texte selected par le texte de l'option
         selected.innerText = option.innerText
-        // Ajout du style sur élément cliqué
-        // selectChoix.classList.remove('select-clicked')
-        // Ajoute le style de rotation de l'arrow
         arrow.classList.remove('arrow-rotate')
-        // Ajout le style ouvert à l'option
         menu.classList.remove('filter-options-container-open')
         });
 
@@ -139,9 +130,7 @@ const selected = document.querySelector('.selected')
             globalPhotos.innerHTML ='';
             filterDate.forEach(media => {
                 const photographerModel = factoryMedia(media);
-                // console.log(photographerModel)      // CHECK DE L'ENSEMBLE DES MEDIAS DU PHOTOGRAPHE SELECTIONNE
                 const userCardDOM = photographerModel.getUserCardDOM();
-                // console.log(userCardDOM)        // CHECK DES MEDIAS
                 globalPhotos.appendChild(userCardDOM);
             });
 
@@ -156,9 +145,7 @@ const selected = document.querySelector('.selected')
             globalPhotos.innerHTML ='';
             filterPopularite.forEach(media => {
                 const photographerModel = factoryMedia(media);
-                // console.log(photographerModel)      // CHECK DE L'ENSEMBLE DES MEDIAS DU PHOTOGRAPHE SELECTIONNE
                 const userCardDOM = photographerModel.getUserCardDOM();
-                // console.log(userCardDOM)        // CHECK DES MEDIAS
                 globalPhotos.appendChild(userCardDOM);
             });
 
@@ -172,9 +159,7 @@ const selected = document.querySelector('.selected')
             globalPhotos.innerHTML ='';
                 filterTitre.forEach(media => {
                 const photographerModel = factoryMedia(media);
-                // console.log(photographerModel)      // CHECK DE L'ENSEMBLE DES MEDIAS DU PHOTOGRAPHE SELECTIONNE
                 const userCardDOM = photographerModel.getUserCardDOM();
-                // console.log(userCardDOM)        // CHECK DES MEDIAS
                 globalPhotos.appendChild(userCardDOM);
             });
 

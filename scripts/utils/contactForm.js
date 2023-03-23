@@ -213,21 +213,20 @@ let verificationDeFirst
 /* CHECKING OF FIRSTNAME INPUT */
 inputFirstName.addEventListener('input', (e) => {
     if(e.target.value.length <= 2) {
-        // console.log(e.target.value.length)
         errorMessage[0].style.display = 'inline'
         inputFirstName.classList.add('echec')
         inputFirstName.classList.add('border')
 
-    errorMessage[0].innerText = "Veuillez entrer 2 caractères minimum"
-    errorMessage[0].style.color = 'red';
-    errorMessage[0].style.fontSize = '1rem'
+        errorMessage[0].innerText = "Veuillez entrer 2 caractères minimum"
+        errorMessage[0].style.color = 'red';
+        errorMessage[0].style.fontSize = '1rem'
         verificationDeFirst = false
     } else {
 
-    errorMessage[0].innerText = 'Champs valide'
-    errorMessage[0].style.color = 'green'
-    errorMessage[0].style.fontSize = '1rem'
-    errorMessage[0].style.display ='inline'
+        errorMessage[0].innerText = 'Champs valide'
+        errorMessage[0].style.color = 'green'
+        errorMessage[0].style.fontSize = '1rem'
+        errorMessage[0].style.display ='inline'
         verificationDeFirst = true
     }
 })
@@ -238,37 +237,37 @@ inputLastName.addEventListener('input', (e) => {
         inputFirstName.classList.add('echec')
         inputFirstName.classList.add('border')
 
-    errorMessage[1].innerText = "Veuillez entrer 2 caractères minimum"
-    errorMessage[1].style.color = 'red';
-    errorMessage[1].style.fontSize = '1rem'
+        errorMessage[1].innerText = "Veuillez entrer 2 caractères minimum"
+        errorMessage[1].style.color = 'red';
+        errorMessage[1].style.fontSize = '1rem'
         verificationDeLast = false
     } else {
-    errorMessage[1].innerText = 'Champs valide'
-    errorMessage[1].style.color = 'green'
-    errorMessage[1].style.fontSize = '1rem'
-    errorMessage[1].style.display ='inline'
+        errorMessage[1].innerText = 'Champs valide'
+        errorMessage[1].style.color = 'green'
+        errorMessage[1].style.fontSize = '1rem'
+        errorMessage[1].style.display ='inline'
         verificationDeLast = true
     }
 })
 /* CHECKING OF EMAIL INPUT */
 inputEmail.addEventListener('input', (e) => {
     const regexEmail = /\S+@\S+\.\S+/
+    
     if(e.target.value.search(regexEmail) === 0) {
 
-    errorMessage[2].innerText = 'Champs valide'
-    errorMessage[2].style.color = 'green'
-    errorMessage[2].style.fontSize = '1rem'      
-    errorMessage[2].style.display = 'inline'
-
+        errorMessage[2].innerText = 'Champs valide'
+        errorMessage[2].style.color = 'green'
+        errorMessage[2].style.fontSize = '1rem'      
+        errorMessage[2].style.display = 'inline'
         verificationEmail = true
     } else {
         errorMessage[2].style.display ='inline'
         inputEmail.classList.add('echec')
         inputEmail.classList.add('border')
 
-    errorMessage[2].innerText = "Entrez Email Correct"
-    errorMessage[2].style.color = 'red';
-    errorMessage[2].style.fontSize = '1rem'
+        errorMessage[2].innerText = "Entrez Email Correct"
+        errorMessage[2].style.color = 'red';
+        errorMessage[2].style.fontSize = '1rem'
 
         verificationEmail = false
     }
@@ -282,13 +281,12 @@ inputMsg.addEventListener('input', (e) => {
         errorMessage[3].style.fontSize = '1rem'
         inputFirstName.classList.add('echec')
         inputFirstName.classList.add('border')
-
         verificationMsg = false
     } else {
-    errorMessage[3].innerText = 'Champs valide'
-    errorMessage[3].style.color = 'green'
-    errorMessage[3].style.fontSize = '1rem'      
-    errorMessage[3].style.display = 'inline'
+        errorMessage[3].innerText = 'Champs valide'
+        errorMessage[3].style.color = 'green'
+        errorMessage[3].style.fontSize = '1rem'      
+        errorMessage[3].style.display = 'inline'
         verificationMsg = true
     }
 })
@@ -303,10 +301,9 @@ document.querySelector('.modal').addEventListener('submit', (e) => {
 
     // LOGGING DES DONNEES ENTREES PAR L'UTILISATEUR
     console.log(inputFirstName.value,inputLastName.value, inputEmail.value, inputMsg.value)
-
     } else {
-    alert("Merci de bien remplir votre inscription"); // Alert box pour informer l'utilisateur à remplir correctement le formulaire
-    e.preventDefault()  // Stop le comportement par défaut de l'envoi du formulaire
+        alert("Merci de bien remplir votre inscription"); // Alert box pour informer l'utilisateur à remplir correctement le formulaire
+        e.preventDefault()  // Stop le comportement par défaut de l'envoi du formulaire
     }    
     })
 }

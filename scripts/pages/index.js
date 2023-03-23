@@ -17,11 +17,11 @@ async function displayData(photographers) {     // PASSAGE EN PARAMETRE DES DONN
         const userCardDOM = photographerModel.getUserCardDOM();
         photographersSection.appendChild(userCardDOM);
     });
-};
+}
 
 async function init() {
     const { photographers } = await getPhotographers();     // RECUPERATION DES DATAS DES PHOTOGRAPHES
     displayData(photographers);                             // FONCTION DISPLAY QUI VA AFFICHER CE QUE LA FACTORY VA PRODUIRE 
-};
+}
     
 init(); // LANCEMENT DE LA FONCTION INITIALISATION

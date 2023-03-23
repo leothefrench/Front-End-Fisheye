@@ -248,8 +248,6 @@ transform: rotate(180deg);
     background-color: #911C1C;
     border: none;
     color: #fff;
-    border-bottom: 1px solid #fff;
-    /* border-radius: 5px; */
     font-family: 'DM Sans';
     font-style: normal;
     font-weight: 700;
@@ -267,6 +265,11 @@ transform: rotate(180deg);
     background-color: #901C1C;
 }
 
+.btn-date {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
 /* ACTIVE STYLE DANS LE dropdownMenu.js */
 .active {
     background-color: #911C1C;
@@ -276,8 +279,6 @@ transform: rotate(180deg);
     display: flex;
     opacity: 1;
     position: absolute;
-    border-top-right-radius: -5px;
-    border-top-left-radius: -5px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 

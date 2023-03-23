@@ -1,60 +1,3 @@
-
-function infoDisplay(data) {
-    const { name, portrait, id, city, country, tagline, price} = data;
-    const picture = `assets/photographers/${portrait}`;
-
-    function getUserCardDOM() {
-        const section = document.createElement( 'section' );
-
-        // CREATION DE LA DIV CONTENANT LE H2 & LES 2 PARAGRAHES
-        const photographerProfile = document.createElement('div')
-        
-        // CREATION H2 DE L'IMAGE - NOM PHOTOGRAPHE    
-        const h2 = document.createElement( 'h2' );
-        h2.textContent = name;
-        h2.setAttribute('tabindex', '0')
-        photographerProfile.appendChild(h2)
-
-        // CREATION DIV CONTENANT LES 2 PARAGRAPHES
-        const divParagrah = document.createElement('div')
-        divParagrah.setAttribute('tabindex', '0')
-
-        // CREATION DES 2 PARAGRAPHES
-        const paragraphOne = document.createElement('p')   
-        paragraphOne.classList.add('paragraphOne')           
-        paragraphOne.textContent = `${city}, ${country}`    
-
-        const paragraphTwo = document.createElement('p')    
-        paragraphTwo.classList.add('paragraphTwo')          
-        paragraphTwo.textContent = tagline;     
-        
-        divParagrah.appendChild(paragraphOne)
-        divParagrah.appendChild(paragraphTwo)
-
-        photographerProfile.appendChild(divParagrah)
-
-        // AJOUT DE LA DIV H2 & PARAGERAPHES A LA DIV PHOTOGRAPHER-PROFILE
-        section.appendChild(photographerProfile)
-
-        const buttonContact = document.querySelector('.contact_button')
-        section.appendChild(buttonContact)
-
-        // CREATION IMG TAG & ATTRIBUTS & STYLE
-        const img = document.createElement( 'img' ); // IL FAUT COMPARER LE FORMAT - PHOTO OU IMAGE
-        img.setAttribute("src", picture)
-        img.setAttribute('alt', name)
-        img.setAttribute('tabindex', '0')
-        img.style.width = "200px"
-        img.style.height = "200px"
-        img.style.borderRadius = "50%"
-
-        section.appendChild(img)
-
-        return (section);
-    }
-    return { name, picture, id, city, country, tagline, price, getUserCardDOM }
-}
-
 // FONCTION POUR INJECTION ENSEMBLE PHOTOS
 function factoryMedia(data) {
     const { id, photographerId, title, image, video, likes, date, price } = data;
@@ -164,37 +107,10 @@ function factoryMedia(data) {
         // divLightBox.appendChild(lightbox)
         article.appendChild(lightbox)
 
-        return (article)
+        return (article) 
     }
+
     return { id, photographerId, title, image, likes, date, price, getUserCardDOM }
 }
-
-
-// CREATION DIV NBRE DE LIKES & ICON COEUR
-
-const divBottom = document.querySelector('.bottomHeart')
-
-const divNumberLikes = document.createElement('div')
-divNumberLikes.classList.add('count-likes')
-
-// PARAGRAPHE NUMBER LIKES & ICON IN SPAN
-const numberLikes = document.createElement('p')
-numberLikes.setAttribute('role', 'paragraph')
-numberLikes.classList.add('counter')
-numberLikes.textContent = '0'
-
-const iconLikes = document.createElement('span')
-iconLikes.innerHTML = '<i class="fa-solid fa-heart"></i>'
-
-const tarifJour = document.createElement('p')
-tarifJour.classList.add('tarif-jour')
-tarifJour.textContent = '300€ / jour'
-
-divNumberLikes.appendChild(numberLikes)
-divNumberLikes.appendChild(iconLikes)
-
-divBottom.appendChild(divNumberLikes)
-divBottom.appendChild(tarifJour)
-
 
 

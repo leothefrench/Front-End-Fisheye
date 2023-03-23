@@ -10,6 +10,7 @@ class Lightbox {
     show(id) {
         this._currentElement = this.getElementById(id);
         this.display();
+
     }
     // POUR AFFICHER L'IMAGE SUIVANTE
     next() {
@@ -25,6 +26,7 @@ class Lightbox {
     // POUR AFFICHER L'IMAGE PRECEDENTE
     previous() {
         let index = this._listElement.findIndex(element => element.id == this._currentElement.id)
+
         if( index == 0) {
             this._currentElement = this._listElement[this._listElement.length - 1];
         } else {
@@ -76,9 +78,9 @@ class Lightbox {
             document.querySelector('.carrouselImage a').append(titleImage)
             document.querySelector('.carrouselImage').innerHTML
 
+            document.querySelector('.lightbox').focus()
             document.querySelector('.lightbox').classList.add('show')
             
-
         } else {
             const videoElement = document.createElement('video')
             videoElement.setAttribute('src', videoPhoto)

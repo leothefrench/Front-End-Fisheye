@@ -11,34 +11,85 @@ async function getPhotographer(photographerId) {    // ICI LE PARAMETRE SERA L'I
     let media = data.media.filter(media => {
         return media.photographerId == photographerId;
     })
-    // console.log(media) // POUR VERIFIER QUE L'ON A LES MEDIAS CORRESPOND A L'ID DU PHOTOGRAPHE QUI A RECU LE CLIC UTILISATEUR
 
     photographers = photographers.filter(person => {
         return person.id == photographerId;
     })   
-    // console.log(photographers)   // POUR VERIFICATION QUE L'OBJET RETOURNE EST CORRECT AVEC LE PHOTOGRAPHE SELECTIONNE
     return {                                     
         photographers, media   // DATA PHOTOGRAPH & MEDIA LUI CORRESPONDANT
     } 
 }
 
+function infoDisplay(data) {
+    const { name, portrait, id, city, country, tagline, price} = data;
+    const picture = `assets/photographers/${portrait}`;
+
+    function getUserCardDOM() {
+        const section = document.createElement( 'section' );
+
+        // CREATION DE LA DIV CONTENANT LE H2 & LES 2 PARAGRAHES
+        const photographerProfile = document.createElement('div')
+        
+        // CREATION H2 DE L'IMAGE - NOM PHOTOGRAPHE    
+        const h2 = document.createElement( 'h2' );
+        h2.textContent = name;
+        h2.setAttribute('tabindex', '0')
+        photographerProfile.appendChild(h2)
+
+        // CREATION DIV CONTENANT LES 2 PARAGRAPHES
+        const divParagrah = document.createElement('div')
+        divParagrah.setAttribute('tabindex', '0')
+
+        // CREATION DES 2 PARAGRAPHES
+        const paragraphOne = document.createElement('p')   
+        paragraphOne.classList.add('paragraphOne')           
+        paragraphOne.textContent = `${city}, ${country}`    
+
+        const paragraphTwo = document.createElement('p')    
+        paragraphTwo.classList.add('paragraphTwo')          
+        paragraphTwo.textContent = tagline;     
+        
+        divParagrah.appendChild(paragraphOne)
+        divParagrah.appendChild(paragraphTwo)
+
+        photographerProfile.appendChild(divParagrah)
+
+        // AJOUT DE LA DIV H2 & PARAGERAPHES A LA DIV PHOTOGRAPHER-PROFILE
+        section.appendChild(photographerProfile)
+
+        const buttonContact = document.querySelector('.contact_button')
+        section.appendChild(buttonContact)
+
+        // CREATION IMG TAG & ATTRIBUTS & STYLE
+        const img = document.createElement( 'img' ); // IL FAUT COMPARER LE FORMAT - PHOTO OU IMAGE
+        img.setAttribute("src", picture)
+        img.setAttribute('alt', name)
+        img.setAttribute('tabindex', '0')
+        img.style.width = "200px"
+        img.style.height = "200px"
+        img.style.borderRadius = "50%"
+
+        section.appendChild(img)
+
+        return (section);
+    }
+    return { name, picture, id, city, country, tagline, price, getUserCardDOM }
+}
+
+
+
 function displayData(photographers) {     // POUR INEJECTER LES DONNEES DANS LE FICHIER PHOTOGRAPHER.HTML
     const photographHeader =  document.querySelector('.photograph-header') // CIBLAGE CLASSE OU LE JS SERA INJECTE
     const globalPhotos = document.querySelector('.globalPhotos')
- 
-
     
     const photographerInfo = infoDisplay(photographers.photographers[0])
-    const photograherCard = photographerInfo.getUserCardDOM()       // INJECTION JS DU MODEL DANS LE HTML
-    photographHeader.appendChild(photograherCard) 
+    const photographerCard = photographerInfo.getUserCardDOM()       // INJECTION JS DU MODEL DANS LE HTML
+    photographHeader.appendChild(photographerCard) 
                     
-
     photographers.media.forEach(media => {
         const photographerModel = factoryMedia(media);
-        // console.log(photographerModel)      // CHECK DE L'ENSEMBLE DES MEDIAS DU PHOTOGRAPHE SELECTIONNE
         const userCardDOM = photographerModel.getUserCardDOM();
-        // console.log(userCardDOM)        // CHECK DES MEDIAS
-        globalPhotos.appendChild(userCardDOM);
+        globalPhotos.appendChild(userCardDOM); 
 
     });
 }
@@ -46,16 +97,16 @@ function displayData(photographers) {     // POUR INEJECTER LES DONNEES DANS LE 
 async function init() {
 
     const photographerId = getPhotographerId()  // ID RECUPERE PAR URL
-    // console.log(photographerId) // ON CHECK L'ID DU PHOTOGRAPHE RECEVANT LE CLIC UTILISATEUR SUR LA PAGE D'ACCUEIL
     const photographer = await getPhotographer(photographerId) // RETOURNE DEUX OBJETS (Photographer &  médias possèdant le même id)
+
     displayData(photographer);
-    // console.log(photographer)       // AFFICHE LES 2 OBJETS OBTENU PAR LA FONCTION GETPHOTOGRAPHER
+    dropDownMenu(photographer)
+  countGlobalLikes() 
 
-        dropDownMenu(photographer)
-        comptageLike(photographer)
-        // lightbox(photographer.media)
-        formulaire(photographer.photographers)
+    comptageLike(photographer)
 
+ 
+    formulaire(photographer.photographers)
 }
     
 init();

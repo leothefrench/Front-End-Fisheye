@@ -11,21 +11,14 @@
 
             const button = event.currentTarget;
             let isLiked = button.getAttribute('data-isliked');
-
-            // console.log(button)
             
             const counter = button.parentElement.children[0]
             let count = parseInt(counter.textContent)
 
             const globalCounter = document.querySelector('.counter')
             let countGlobal = parseInt(globalCounter.textContent)
-            // countGlobal.textContent = sumArrayOfNumbers() // CODAGE DE CETTE FUNCTION POUR AVOIR LE TOTAL DES LIKES DU DEPART
-
-            // console.log(isLiked)
-            // console.log(typeof (isLiked))
 
             if(isLiked == "true"){
-                // alert('POUF')
                 count--;
                 countGlobal--;
                 button.setAttribute('data-isliked', false)
@@ -39,7 +32,6 @@
             counter.textContent = `${count}`;
             globalCounter.textContent = `${countGlobal}`
 
-            // console.log(globalCounter)
         }
 
         // RECUPERATION DES PARAGRAPHES CONTENANT LES NOMBRES DE LIKES
@@ -53,6 +45,31 @@
         // AJOUT AU COMPTEUR DES LIKES EN BAS DE PAGE
         let countBottom = document.querySelector('.counter')
         countBottom.innerText = `${total}`
+        
     }
        
+function countGlobalLikes() {
+const divBottom = document.querySelector('.bottomHeart')
 
+const divNumberLikes = document.createElement('div')
+divNumberLikes.classList.add('count-likes')
+
+// PARAGRAPHE NUMBER LIKES & ICON IN SPAN
+const numberLikes = document.createElement('p')
+numberLikes.setAttribute('role', 'paragraph')
+numberLikes.classList.add('counter')
+numberLikes.textContent = '0'
+
+const iconLikes = document.createElement('span')
+iconLikes.innerHTML = '<i class="fa-solid fa-heart"></i>'
+
+const tarifJour = document.createElement('p')
+tarifJour.classList.add('tarif-jour')
+tarifJour.textContent = '300€ / jour'
+
+divNumberLikes.appendChild(numberLikes)
+divNumberLikes.appendChild(iconLikes)
+
+divBottom.appendChild(divNumberLikes)
+divBottom.appendChild(tarifJour)
+}
