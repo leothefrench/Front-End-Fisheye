@@ -48,7 +48,21 @@ class Lightbox {
             this.close()
         })
 
-       }
+        // EVENTS RIGHT AND LEFT ARROW
+
+        window.addEventListener('keydown',(e) => {
+        const keyCode = e.keyCode ? e.keyCode : e.which
+        
+            if (keyCode === 39) {
+                this.next()
+            } else if (keyCode === 37) {
+                this.previous()
+            } else if(keyCode == 27) {
+                this.close()
+            }
+        })    
+    }
+
     // POUR OBTENIR L'ID DE
     getElementById(id) {
         let idInListElement = this._listElement.find(element => element.id == id);

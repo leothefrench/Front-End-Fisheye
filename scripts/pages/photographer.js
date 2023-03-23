@@ -76,8 +76,6 @@ function infoDisplay(data) {
     return { name, picture, id, city, country, tagline, price, getUserCardDOM }
 }
 
-
-
 function displayData(photographers) {     // POUR INEJECTER LES DONNEES DANS LE FICHIER PHOTOGRAPHER.HTML
     const photographHeader =  document.querySelector('.photograph-header') // CIBLAGE CLASSE OU LE JS SERA INJECTE
     const globalPhotos = document.querySelector('.globalPhotos')
@@ -101,11 +99,8 @@ async function init() {
 
     displayData(photographer);
     dropDownMenu(photographer)
-  countGlobalLikes() 
-
+    countGlobalLikes() 
     comptageLike(photographer)
-
- 
     formulaire(photographer.photographers)
 }
     

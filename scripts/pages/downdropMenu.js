@@ -13,14 +13,20 @@
       // CREATION DROPDOWN MENU 
       const divDropdownMenu = document.createElement('div')
       divDropdownMenu.classList.add('dropdown')
+      divDropdownMenu.setAttribute('tabindex', '0')
       sectionFilter.appendChild(divDropdownMenu)
 
       const select = document.createElement('div')
       select.classList.add('select')
       divDropdownMenu.appendChild(select)
 
-      const spanSelected = document.createElement('button') // Avant bouton
+      const spanSelected = document.createElement('a') // Avant bouton
       spanSelected.classList.add('selected')
+      spanSelected.setAttribute('role', 'button')
+      spanSelected.setAttribute('aria-controls', 'filter-options')
+      // spanSelected.setAttribute('aria-haspopup')
+      spanSelected.setAttribute('aria-label', 'trier-par')
+      spanSelected.setAttribute('tabindex', '0')
       spanSelected.textContent = 'Popularité'
       select.appendChild(spanSelected)
 
@@ -36,9 +42,9 @@
       divContainerChoice.setAttribute('role', 'listbox')
 
       // CREATION DES TROIS SPANS TAG POUR LES 3 CHOIX
-      const aFirstChoicePopularite = document.createElement('button')
-      const aSecondChoiceDate = document.createElement('button')
-      const aThirdChoiceTitre = document.createElement('button')
+      const aFirstChoicePopularite = document.createElement('a')
+      const aSecondChoiceDate = document.createElement('a')
+      const aThirdChoiceTitre = document.createElement('a')
 
       //FIRST CHOICE - POPULARITE
       aFirstChoicePopularite.classList.add('filter-option')
