@@ -103,8 +103,7 @@ function factoryMedia(data) {
 
         // AJOUT divTitleAndHeart A LA DIV LIGHTBOX
         lightbox.appendChild(divTitleAndHeart)
-        
-        // divLightBox.appendChild(lightbox)
+
         article.appendChild(lightbox)
 
         return (article) 

@@ -48,11 +48,16 @@ class Lightbox {
             this.close()
         })
 
+
+        window.addEventListener("click", () => {
+        document.querySelector(".content").focus();
+        });
+
         // EVENTS RIGHT AND LEFT ARROW
 
         window.addEventListener('keydown',(e) => {
         const keyCode = e.keyCode ? e.keyCode : e.which
-        
+       
             if (keyCode === 39) {
                 this.next()
             } else if (keyCode === 37) {
@@ -92,8 +97,9 @@ class Lightbox {
             document.querySelector('.carrouselImage a').append(titleImage)
             document.querySelector('.carrouselImage').innerHTML
 
-            document.querySelector('.lightbox').focus()
+            document.querySelector('.content').focus()
             document.querySelector('.lightbox').classList.add('show')
+            document.querySelector('.lightbox').setAttribute('aria-hidden', 'false')
             
         } else {
             const videoElement = document.createElement('video')

@@ -10,7 +10,7 @@ function photographerFactory(data) {
         const divPhotoH2 = document.createElement('div')
         divPhotoH2.classList.add('divPhotoH2')
 
-        // CREATION IMAGE (avec src & alt) - 
+        // CREATION IMAGE (avec src & alt)
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture)
         img.setAttribute('alt', `${name}`)   
@@ -26,6 +26,7 @@ function photographerFactory(data) {
         aTag.setAttribute('id', id) 
         aTag.setAttribute('href', link) 
         aTag.style.textDecoration = "none"       
+        
         // AJOUT AU PARENT
         aTag.appendChild(img);
         aTag.appendChild(h2)

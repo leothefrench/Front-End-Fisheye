@@ -8,7 +8,7 @@ const divContent = document.createElement('div')
 
     divContent.classList.add('content')
     divContent.setAttribute('tabindex', '0')
-    divContent.setAttribute('aria-label', 'image closeup view')
+    divContent.setAttribute('role', 'dialog')
   
     // DIV LEFT FOR LEFT BUTTON
     let divLeftButton =  document.createElement('div')
@@ -16,7 +16,7 @@ const divContent = document.createElement('div')
             
     let leftButton = document.createElement('button')
     leftButton.classList.add('previous')
-    leftButton.setAttribute('tabindex', '0')
+    // leftButton.setAttribute('tabindex', '0')
     leftButton.setAttribute('aria-label', 'Image précédente')
     let leftIconSpan = document.createElement('span')
     leftIconSpan.innerHTML = `<i class="fas fa-angle-left"></i>`
@@ -35,8 +35,8 @@ const divContent = document.createElement('div')
 
     // CREATION DU LIEN QUI CONTIENDRA LA PHOTO CLIQUABLE POUR LANCER LA LIGHTBOX
     const linkImgCarrousel =  document.createElement('a')
-    const linkImgCarrou = '#'
-    linkImgCarrousel.setAttribute('href', linkImgCarrou)  
+    // const linkImgCarrou = '#'
+    linkImgCarrousel.setAttribute('href', '#')  
     linkImgCarrousel.setAttribute('role', 'button')
     linkImgCarrousel.setAttribute('aria-describedby', 'Ouvrir le Carousel') 
 
@@ -50,7 +50,7 @@ const divContent = document.createElement('div')
     const divCloseButton = document.createElement('div')
     divCloseButton.classList.add('divCloseButton')
     let btnCloseLightbox = document.createElement('button')
-    btnCloseLightbox.setAttribute('tabindex', '0')
+    // btnCloseLightbox.setAttribute('tabindex', '0')
     btnCloseLightbox.setAttribute('aria-label', 'Fermer le Carrousel')
     btnCloseLightbox.classList.add('closeLightbox')
     btnCloseLightbox.textContent = 'x'
@@ -59,7 +59,7 @@ const divContent = document.createElement('div')
     const divInterneRightButton = document.createElement('div')
     divInterneRightButton.classList.add('divInterneRightButton')
     let rightButton = document.createElement('button')
-    rightButton.setAttribute('tabindex', '0')
+    // rightButton.setAttribute('tabindex', '0')
     rightButton.setAttribute('aria-label', 'Image suivante')
     rightButton.classList.add('next')
     divInterneRightButton.appendChild(rightButton)
